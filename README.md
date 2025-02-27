@@ -1,42 +1,39 @@
-# 🧠 AutoGPT – Autonomous AI Agent | Built by SaurabhCodesAI
+# AutoGPT – Next-Gen Autonomous AI  
 
-## 🚀 **Overview**
-AutoGPT is a **cutting-edge autonomous AI agent** built for **self-improving decision-making, multi-modal reasoning, and real-world task execution**. Leveraging **fine-tuned LLMs, reinforcement learning, and distributed AI**, this project is engineered for **high-performance automation at scale**.
+## 📌 Overview  
+AutoGPT is an advanced **autonomous AI agent** that integrates **multi-modal reasoning, real-time contextual awareness, and decision-making** across diverse tasks. Built with **cutting-edge reinforcement learning, fine-tuned LLMs, and a scalable distributed architecture**, this project **redefines AI automation**.  
 
-## ⚡ **Key Features**
-✅ **Autonomous AI Execution** – Real-time decision-making & adaptation  
-✅ **Custom Fine-Tuned Models** – RLHF, LoRA, and QLoRA optimization  
-✅ **Multi-Modal AI** – Handles text, vision, and speech processing  
-✅ **Scalable Vector Memory** – FAISS, Redis & AI-driven knowledge retrieval  
-✅ **Enterprise-Grade Deployment** – Auto-scaling with Kubernetes & CI/CD  
+## 🏆 Key Features  
+✔️ **Autonomous Execution** – Self-improving AI agent with multi-modal reasoning.  
+✔️ **Custom Fine-Tuned Models** – Uses **RLHF, LoRA, PEFT**, and hybrid reinforcement learning.  
+✔️ **High-Performance Vector Search** – FAISS, Redis, and optimized retrieval pipelines.  
+✔️ **Enterprise-Scale Deployment** – Auto-scaling with Kubernetes and inference optimization.  
+✔️ **Distributed AI Computing** – Ray/Dask for parallel processing and high-speed execution.  
 
----
+## ⚡ Technology Stack  
+| Category        | Tools & Frameworks |
+|----------------|--------------------|
+| **Programming** | Python (Async, PyPy), Rust (optimized AI ops) |
+| **AI Models**  | LLaMA, Mistral, GPT-4 (Fine-Tuned), RLHF + QLoRA |
+| **Frameworks** | PyTorch Lightning, JAX, Deepspeed, Hugging Face Accelerate |
+| **Memory & Storage** | FAISS, Redis, PostgreSQL, TimescaleDB |
+| **Infrastructure** | Ray / Dask (distributed AI), Triton Inference Server, FastAPI, Kubernetes |
+| **DevOps & Deployment** | Docker, Podman, Google Cloud, CI/CD Pipelines |
 
-## 🛠 **Technology Stack**
-| Category             | Tools & Frameworks |
-|----------------------|--------------------|
-| **Programming**      | Python (Async) | Rust (Optimized Ops) |
-| **AI Models**        | Fine-tuned LLaMA, GPT-4, Mistral | RLHF + LoRA |
-| **Frameworks**       | PyTorch Lightning | JAX | Hugging Face | Deepspeed |
-| **Memory & Storage** | FAISS | Redis | PostgreSQL + TimescaleDB |
-| **Infrastructure**   | Ray / Dask (distributed AI) | Triton Inference Server | FastAPI |
-| **DevOps**          | Docker | Kubernetes | CI/CD Pipelines |
+## 🛠️ Installation  
+See **[INSTALLATION.md](INSTALLATION.md)** for detailed setup instructions.  
 
----
+## 📈 Roadmap  
+1️⃣ **Self-Supervised Learning Module** – Enables AutoGPT to refine responses autonomously.  
+2️⃣ **Multi-Modal Integration** – Vision, Speech, and Text-based AI interactions.  
+3️⃣ **Reinforcement Learning Engine** – Advanced Q-Learning + PPO fine-tuning.  
+4️⃣ **AI-Optimized Knowledge Graphs** – Enhances long-term memory and contextual recall.  
+5️⃣ **Auto-Scaling on Distributed Nodes** – Full integration with Kubernetes for seamless scaling.  
 
-## 📍 **Installation**
-Follow the steps in [INSTALLATION.md](INSTALLATION.md) to set up AutoGPT on your system.
+## 📜 License  
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.  
 
-## 🛤 **Roadmap**
-- ✅ Current: **Core AutoGPT Engine, RLHF Fine-Tuning**
-- 🔜 Next: **Multi-Modal AI (Vision + Speech)**, Self-Supervised Learning, Advanced RL
-
-Check [ROADMAP.md](ROADMAP.md) for detailed upcoming features.
-
----
-
-## 🏆 **Contribute & Collaborate**
-Want to contribute? Read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+## 🤝 Contributing  
+We welcome contributions! Read **[CONTRIBUTING.md](CONTRIBUTING.md)** for guidelines on submitting issues, feature requests, and pull requests.  
 
 ---
-🚀 **Follow & Star** the repo if you're interested in AI automation at scale!
