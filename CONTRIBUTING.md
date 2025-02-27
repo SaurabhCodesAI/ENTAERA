@@ -55,7 +55,7 @@ Check ROADMAP.md for high-priority upcoming features.
 
 ## 🚀 Upcoming Features  
 1️⃣ Self-Supervised Learning – AI agent will continuously improve itself.  
-2️⃣ Multi-Modal AI** – Integrating vision, speech, and text.  
+2️⃣ Multi-Modal AI – Integrating vision, speech, and text.  
 3️⃣ Reinforcement Learning – Q-learning & PPO-based fine-tuning.  
 4️⃣ Optimized Knowledge Graphs – Enhancing long-term memory.  
 5️⃣ Scalable Auto-Deployment – Kubernetes-based auto-scaling.  
