@@ -33,7 +33,7 @@ git push origin feature-name
 - feature/xyz → Feature-Specific Branches  
 
 ## 🐞 Reporting Issues  
-Found a bug? Open an issue and include:  
+  Found a bug? Open an issue and include:  
 - 📌 A clear problem description 
 - 🔄 Steps to reproduce
 - ✅ Expected vs ❌ Actual behavior  
