@@ -1,43 +1,33 @@
-# 🛠 AutoGPT Installation Guide  
+# 🚀 Installation Guide – AutoGPT  
 
-## ✅ **System Requirements**
-- Python **3.10+**  
-- NVIDIA GPU with **CUDA 11+** (for accelerated training)  
-- At least **16GB RAM** for large-scale AI processing  
+Follow this guide to set up and run AutoGPT seamlessly.  
 
-## 🚀 **Installation Steps**
-1️⃣ **Clone the Repository**  
-```bash
-git clone https://github.com/SaurabhCodesAI/AutoGPT.git && cd AutoGPT
+## 🔹 Prerequisites  
+✅ **Python 3.8+**  
+✅ **pip** (Latest Version)  
+✅ **CUDA 11+** (For GPU acceleration)  
+✅ **Docker** (For containerized deployment)  
+✅ **Google Cloud Account** (For scalable AI deployment)  
+
+## 🔧 Setup Instructions  
+
+### 1️⃣ Clone the Repository  
+```sh
+git clone https://github.com/SaurabhCodesAI/AutoGPT.git
+cd AutoGPT
+
 2️⃣ Create a Virtual Environment
-python -m venv env && source env/bin/activate  # Mac/Linux  
-env\Scripts\activate  # Windows
+python3 -m venv env
+source env/bin/activate  # (On Windows: env\Scripts\activate)
+
 3️⃣ Install Dependencies
 pip install -r requirements.txt
+
 4️⃣ Run AutoGPT
-python main.py --mode autonomous
-For advanced configurations, check CON
+python main.py
 
-🚀 Now you're ready to unleash the power of AutoGPT!FIG.md.
+5️⃣ Docker Setup (Optional)
+docker build -t autogpt .
+docker run -p 8080:8080 autogpt
 
----
-
-## **ROADMAP.md** (Future Enhancements)  
-
-```md
-# 📍 AutoGPT Development Roadmap  
-
-## ✅ **Current Features**
-- **Autonomous AI Reasoning & Decision-Making**
-- **Fine-tuned LLMs with RLHF & QLoRA Optimization**
-- **Memory-Augmented Processing (FAISS, Redis)**
-
-## 🔜 **Upcoming Enhancements**
-1️⃣ **Self-Supervised Learning Module** – Enables AutoGPT to refine responses autonomously.  
-2️⃣ **Multi-Modal Integration** – Vision, Speech, and Text-based AI interactions.  
-3️⃣ **Advanced Reinforcement Learning Engine** – Q-Learning + PPO fine-tuning.  
-4️⃣ **Knowledge Graph-Based Memory** – Improves contextual AI recall.  
-5️⃣ **Auto-Scaling on Distributed Nodes** – Full Kubernetes integration.
-
----
-🛠 **Your contributions help shape the future of AutoGPT – Let’s build the next-gen AI agent!**
+For further customization, refer to CONTRIBUTING.md.
