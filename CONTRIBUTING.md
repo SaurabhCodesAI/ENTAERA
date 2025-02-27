@@ -21,24 +21,23 @@ git push origin feature-name
 
 5️⃣ Submit a PR and describe your changes.
 
-✅ Code Standards
-✔️ Follow PEP 8 for Python.
-✔️ Ensure well-documented functions and classes.
-✔️ Use type hints for function parameters and return values.
-✔️ Maintain high test coverage for all new features.
+## ✅ Code Standards
+✔️ Follow **PEP 8** for Python.  
+✔️ Ensure **well-documented** functions and classes.  
+✔️ Use **type hints** for function parameters and return values.  
+✔️ Maintain **high test coverage** for all new features.  
 
-🛠 Branching Strategy
-main → Stable Production
-dev → Active Development
-feature/xyz → Feature-Specific Branches
+## 🛠 Branching Strategy  
+- **main** → Stable Production  
+- **dev** → Active Development  
+- **feature/xyz** → Feature-Specific Branches  
 
-🐞 Reporting Issues
-Found a bug? Open an issue and include:
-
-A clear problem description
-Steps to reproduce
-Expected vs actual behavior
-Logs and screenshots (if applicable)
+## 🐞 Reporting Issues  
+Found a bug? Open an issue and include:  
+- 📌 A **clear problem description**  
+- 🔄 **Steps to reproduce**  
+- ✅ Expected vs ❌ Actual behavior  
+- 📜 **Logs and screenshots** (if applicable)  
 
 🎯 Future Contributions
 Check ROADMAP.md for high-priority upcoming features.
