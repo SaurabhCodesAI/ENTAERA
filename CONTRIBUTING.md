@@ -1,14 +1,23 @@
-# 📌 Contributing to AutoGPT  
 
-## 🚀 How to Contribute  
-🔹 Fork the repository & clone it locally.  
-🔹 Work on a **feature branch** (`git checkout -b feature-xyz`).  
-🔹 Follow **PEP8** coding style & write **efficient, optimized** AI code.  
-🔹 Submit a **pull request** with a clear description & benchmarks.  
+---
 
-## 📢 Contribution Guidelines  
-✅ AI improvements should align with **RLHF, LoRA, or AutoGPT enhancements**.  
-✅ No hardcoded APIs – use **configurable settings**.  
-✅ Always include **unit tests** for new modules.  
+### **CONTRIBUTING.md **  
+```md
+# 🤝 Contributing to AutoGPT  
 
-**Your contributions shape the future of AutoGPT – let’s build something elite!**
+We welcome contributions to AutoGPT! Follow the guidelines below for an efficient collaboration.  
+
+## 📝 Contribution Workflow  
+
+1️⃣ **Fork the repository** and clone your fork.  
+2️⃣ **Create a new branch** for your feature:  
+```sh
+git checkout -b feature-name
+3️⃣ Commit changes with clear messages:
+git commit -m "Implemented feature XYZ"
+
+4️⃣ Push to your fork and create a Pull Request:
+git push origin feature-name
+
+5️⃣ Submit a PR and describe your changes.
+
