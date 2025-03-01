@@ -8,7 +8,7 @@ AutoGPT is an advanced **autonomous AI agent** that integrates **multi-modal rea
 ✔️ **Custom Fine-Tuned Models** – Uses **RLHF, LoRA, PEFT**, and hybrid reinforcement learning.  
 ✔️ **High-Performance Vector Search** – FAISS, Redis, and optimized retrieval pipelines.  
 ✔️ **Enterprise-Scale Deployment** – Auto-scaling with Kubernetes and inference optimization.  
-✔️ **Distributed AI Computing** – Ray/Dask for parallel processing and high-speed execution.  
+✔️ **Distributed AI Computing** – Ray/Dask for parallel processing and high-speed execution. 
 
 ## ⚡ Technology Stack  
 | Category        | Tools & Frameworks |
