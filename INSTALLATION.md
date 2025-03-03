@@ -2,7 +2,7 @@
 
 Follow this guide to set up and run AutoGPT seamlessly.  
 
-## 🔹 Prerequisites  
+## 🔹 Prerequisites 
 ✅ **Python 3.8+**  
 ✅ **pip** (Latest Version)  
 ✅ **CUDA 11+** (For GPU acceleration)  
