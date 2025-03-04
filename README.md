@@ -20,7 +20,7 @@ AutoGPT is an advanced **autonomous AI agent** that integrates **multi-modal rea
 | **Infrastructure** | Ray / Dask (distributed AI), Triton Inference Server, FastAPI, Kubernetes |
 | **DevOps & Deployment** | Docker, Podman, Google Cloud, CI/CD Pipelines |
 
-## 🛠️ Installation  
+## 🛠️ Installation 
 See **[INSTALLATION.md](INSTALLATION.md)** for detailed setup instructions.  
 
 ## 📈 Roadmap  
