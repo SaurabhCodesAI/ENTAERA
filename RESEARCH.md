@@ -7,7 +7,7 @@
 ## 📊 **Performance Benchmarks**
 ✅ **GPT-4 Fine-Tuned Model** – 89% improvement in contextual reasoning  
 ✅ **FAISS + Redis Hybrid Memory** – 6x faster knowledge retrieval  
-✅ **Ray Distributed Computing** – Reduced inference latency by 75%  
+✅ **Ray Distributed Computing** – Reduced inference latency by 75% 
 
 ## 🛠 **Ongoing Research**
 🔹 Integrating **Transformer-based self-supervision**  
