@@ -27,7 +27,7 @@ git push origin feature-name
 ✔️ Use type hints for function parameters and return values.  
 ✔️ Maintain high test coverage for all new features.  
 
-## 🛠 Branching Strategy  
+## 🛠 Branching Strategy 
 - main → Stable Production  
 - dev → Active Development  
 - feature/xyz → Feature-Specific Branches  
