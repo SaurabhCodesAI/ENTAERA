@@ -37,7 +37,7 @@ Found a bug? Open an issue and include:
 - 📌 A clear problem description 
 - 🔄 Steps to reproduce
 - ✅ Expected vs ❌ Actual behavior  
-- 📜 Logs and screenshots (if applicable)  
+- 📜 Logs and screenshots (if applicable) 
 
 🎯 Future Contributions
 Check ROADMAP.md for high-priority upcoming features.
