@@ -22,7 +22,7 @@ git push origin feature-name
 5️⃣ Submit a PR and describe your changes.
 
 ## ✅ Code Standards
-✔️ Follow PEP 8 for Python.  
+✔️ Follow PEP 8 for Python. 
 ✔️ Ensure well-documented functions and classes.  
 ✔️ Use type hints for function parameters and return values.  
 ✔️ Maintain high test coverage for all new features.  
