@@ -9,7 +9,7 @@ We welcome contributions to AutoGPT! Follow the guidelines below for an efficien
 
 ## 📝 Contribution Workflow
 
-1️⃣ **Fork the repository** and clone your fork. 
+1️⃣ **Fork the repository** and clone your fork.
 2️⃣ **Create a new branch** for your feature: 
 ```sh
 git checkout -b feature-name
