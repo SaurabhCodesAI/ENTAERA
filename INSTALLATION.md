@@ -5,7 +5,7 @@ Follow this guide to set up and run AutoGPT seamlessly.
 ## 🔹 Prerequisites 
 ✅ **Python 3.8+** 
 ✅ **pip** (Latest Version)  
-✅ **CUDA 11+** (For GPU acceleration)  
+✅ **CUDA 11+** (For GPU acceleration) 
 ✅ **Docker** (For containerized deployment)  
 ✅ **Google Cloud Account** (For scalable AI deployment)  
 
