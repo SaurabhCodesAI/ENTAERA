@@ -5,7 +5,7 @@
 - **LoRA & QLoRA** – Efficient parameter optimization for large models  
 
 ## 📊 **Performance Benchmarks**
-✅ **GPT-4 Fine-Tuned Model** – 89% improvement in contextual reasoning  
+✅ **GPT-4 Fine-Tuned Model** – 89% improvement in contextual reasoning 
 ✅ **FAISS + Redis Hybrid Memory** – 6x faster knowledge retrieval  
 ✅ **Ray Distributed Computing** – Reduced inference latency by 75%
 
