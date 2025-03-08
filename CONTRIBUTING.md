@@ -3,7 +3,7 @@
 
 ### CONTRIBUTING.md  
 ```md
-# 🤝 Contributing to AutoGPT 
+# 🤝 Contributing to AutoGPT
 
 We welcome contributions to AutoGPT! Follow the guidelines below for an efficient collaboration. 
 
