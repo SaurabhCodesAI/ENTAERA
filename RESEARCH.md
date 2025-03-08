@@ -10,7 +10,7 @@
 ✅ **Ray Distributed Computing** – Reduced inference latency by 75%
 
 ## 🛠 **Ongoing Research**
-🔹 Integrating **Transformer-based self-supervision**  
+🔹 Integrating **Transformer-based self-supervision** 
 🔹 Optimizing **multi-modal learning with contrastive training**  
 🔹 Scaling **AutoGPT for enterprise AI applications**  
 
