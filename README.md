@@ -1,7 +1,7 @@
 # AutoGPT – Next-Gen Autonomous AI  
 
 ## 📌 Overview  
-AutoGPT is an advanced **autonomous AI agent** that integrates **multi-modal reasoning, real-time contextual awareness, and decision-making** across diverse tasks. Built with **cutting-edge reinforcement learning, fine-tuned LLMs, and a scalable distributed architecture**, this project **redefines AI automation**. 
+AutoGPT is an advanced **autonomous AI agent** that integrates **multi-modal reasoning, real-time contextual awareness, and decision-making** across diverse tasks. Built with **cutting-edge reinforcement learning, fine-tuned LLMs, and a scalable distributed architecture**, this project **redefines AI automation**.
 
 ## 🏆 Key Features 
 ✔️ **Autonomous Execution** – Self-improving AI agent with multi-modal reasoning. 
