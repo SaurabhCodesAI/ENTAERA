@@ -14,7 +14,7 @@ We welcome contributions to AutoGPT! Follow the guidelines below for an efficien
 ```sh
 git checkout -b feature-name
 3️⃣ Commit changes with clear messages:
-git commit -m "Implemented feature XYZ"
+git commit -m "Implemented feature XYZ" 
 
 4️⃣ Push to your fork and create a Pull Request:
 git push origin feature-name
