@@ -6,7 +6,7 @@ AutoGPT is an advanced **autonomous AI agent** that integrates **multi-modal rea
 ## 🏆 Key Features  
 ✔️ **Autonomous Execution** – Self-improving AI agent with multi-modal reasoning. 
 ✔️ **Custom Fine-Tuned Models** – Uses **RLHF, LoRA, PEFT**, and hybrid reinforcement learning.  
-✔️ **High-Performance Vector Search** – FAISS, Redis, and optimized retrieval pipelines. 
+✔️ **High-Performance Vector Search** – FAISS, Redis, and optimized retrieval pipelines.
 ✔️ **Enterprise-Scale Deployment** – Auto-scaling with Kubernetes and inference optimization.  
 ✔️ **Distributed AI Computing** – Ray/Dask for parallel processing and high-speed execution.
 
