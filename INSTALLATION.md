@@ -12,7 +12,7 @@ Follow this guide to set up and run AutoGPT seamlessly.
 ## 🔧 Setup Instructions  
 
 ### 1️⃣ Clone the Repository  
-```sh
+```sh 
 git clone https://github.com/SaurabhCodesAI/AutoGPT.git
 cd AutoGPT
 
