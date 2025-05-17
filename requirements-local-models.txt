@@ -1,0 +1,20 @@
+# Requirements for local model support
+# Install with: pip install -r requirements-local-models.txt
+
+# Core dependencies for local AI models
+torch>=2.0.0                    # PyTorch for GPU detection and models
+sentence-transformers>=2.2.0    # For embedding models
+requests>=2.28.0               # For downloading models
+tqdm>=4.64.0                   # Progress bars for downloads
+
+# Optional: For GGUF model support (llama.cpp Python bindings)
+llama-cpp-python>=0.2.0       # For running GGUF models efficiently
+
+# Optional: For Hugging Face transformers (alternative to GGUF)
+transformers>=4.30.0           # Hugging Face models
+accelerate>=0.20.0             # Model acceleration
+bitsandbytes>=0.39.0           # Quantization support
+
+# GPU memory management
+GPUtil>=1.4.0                  # GPU monitoring
+psutil>=5.9.0                  # System resource monitoring

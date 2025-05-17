@@ -1,0 +1,224 @@
+# =====================================================
+# SECURITY - NEVER COMMIT THESE FILES
+# =====================================================
+
+# Environment variables with API keys and secrets
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.local_ai
+.env.fixed
+*.key
+*.pem
+secrets/
+credentials/
+secrets.json
+
+# Keep example templates
+!.env.example
+!.env.development.example
+!.env.production.example
+
+# =====================================================
+# Python
+# =====================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Performance profiling
+*.prof
+*.profile
+
+# =====================================================
+# Project Specific - Runtime Data
+# =====================================================
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Cache directories
+cache/
+.cache/
+__cache__/
+
+# Data directories (may contain sensitive user data)
+data/
+output/
+results/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# =====================================================
+# AI/ML Specific
+# =====================================================
+
+# Model files and embeddings
+models/
+embeddings/
+vector_stores/
+training_data/
+*.pkl
+*.joblib
+
+# Monitoring and metrics
+metrics/
+traces/
+
+# =====================================================
+# IDE / Editors
+# =====================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# =====================================================
+# Operating System
+# =====================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+
+# =====================================================
+# Documentation
+# =====================================================
+
+# Documentation builds
+docs/_build/
+site/
+
+# =====================================================
+# Docker
+# =====================================================
+
+.dockerignore
+
+# =====================================================
+# Archives & Backups (Don't commit to repo)
+# =====================================================
+
+demo_backup/
+docs_backup/
+irrelevant_backup/
+*_backup/
+*.bak
+*.backup
+*.old
+
+# =====================================================
+# Personal Files (Interview prep, resumes, etc.)
+# =====================================================
+
+*INTERVIEW*.md
+*PREP*.md
+RESUME*.md
+*PERSONAL*.md
+*PRIVATE*.md
+CLEANUP_NOTES.md
+STRUCTURE.md
