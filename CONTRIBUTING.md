@@ -5,7 +5,7 @@
 ```md
 # 🤝 Contributing to AutoGPT
  
-We welcome contributions to AutoGPT! Follow the guidelines below for an efficient collaboration. 
+We welcome contributions to AutoGPT! Follow the guidelines below for an efficient collaboration.  
 
 ## 📝 Contribution Workflow
  
