@@ -8,7 +8,7 @@
 We welcome contributions to AutoGPT! Follow the guidelines below for an efficient collaboration. 
 
 ## 📝 Contribution Workflow
-
+ 
 1️⃣ **Fork the repository** and clone your fork.
 2️⃣ **Create a new branch** for your feature: 
 ```sh
