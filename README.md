@@ -102,5 +102,5 @@ VertexAutoGPT was crafted from the ground up — every pipeline, module, and rea
 
 ## 💬 Contact / Collab
 
-Open to OSS collaborations, R&D partnerships, or GPU-scale infra builds.  
+Open to OSS collaborations, R&D partnerships.  
 📧 saurabhpareek228@gmail.com
