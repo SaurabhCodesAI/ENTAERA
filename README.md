@@ -1,107 +1,89 @@
-# VertexAutoGPT
+🧠 What is VertexAutoGPT?
+VertexAutoGPT is a next-generation autonomous AI agent, built entirely from scratch — not a clone, not a fork. It combines modular reasoning, custom model tuning, optimized memory systems, and distributed execution, designed for developers who want full control and ruthless efficiency.
 
-> **"Not a clone. Not a fork. A brain you own."**  
-> Autonomous, self-improving AI agent — built from scratch for elite-grade automation.
+This is not just another wrapper around OpenAI APIs. VertexAutoGPT is a purpose-built system with its own logic, memory, and feedback loops — engineered for measurable, production-grade performance.
 
----
+⚡ Key Capabilities
+✅ Autonomous Execution — Multi-step reasoning with retry/reward loops
+✅ Memory-Driven Logic — Hybrid Redis + FAISS architecture for fast + deep recall
+✅ Self-Improving — QLoRA fine-tuning pipeline using real JSON-based feedback logs
+✅ Toolchain Automation — GitHub commits, file operations, Notion/Markdown integration
+✅ Parallel Agent Ops — Ray + Dask for distributed execution
+✅ Benchmarkable — Evaluate evolution using memory + planning tests
+✅ Cloud-Native Deployment — Docker, Helm, Kubernetes, runs on CPU or GPU nodes
 
-## 🧠 What is VertexAutoGPT?
+🧰 Tech Stack
+Category	Tools / Frameworks
+Programming	Python (Async), PyPy
+Models	QLoRA-tuned LLaMA, Mistral
+Frameworks	PyTorch Lightning, Deepspeed, JAX
+Memory & Storage	Redis, FAISS, PostgreSQL, TimescaleDB
+Infra Execution	Ray, Dask, Kubernetes
+DevOps	Docker, Helm, Cloud Build, GCP CI/CD
 
-**VertexAutoGPT** is a next-generation autonomous AI agent built fully from first principles — no clones, no forks. It combines modular reasoning, custom model tuning, high-performance memory systems, and distributed execution — designed for developers who want full control and zero compromises.
+🧭 Roadmap Snapshot
+Phase 1 – Tactical Intelligence
 
-It is not just another wrapper around OpenAI APIs. This is an architected system with its own brains, pipelines, and internal feedback loops.
+CLI toolchain
 
----
+Retry loops + Ray/Dask parallelism
 
-## ⚡ Key Capabilities
+Phase 2 – Deep Memory + Autonomy
 
-- ✅ **Autonomous Execution** — Executes multi-step tasks with retry/reward loops  
-- ✅ **Memory-Driven Reasoning** — Uses Redis + FAISS hybrid memory with prioritization  
-- ✅ **Learning from Failure** — QLoRA fine-tuning pipeline based on real feedback logs  
-- ✅ **Toolchain Automation** — GitHub commits, file ops, Notion/Markdown updates  
-- ✅ **Parallelized Agent Ops** — Ray/Dask for distributed tool invocations  
-- ✅ **Benchmarkable** — Tracks evolution via `benchmark.py`  
-- ✅ **Cloud-Native Deployment** — Docker, Helm, Kubernetes, and GCP (GPU/CPU)
+Hybrid Redis + FAISS memory
 
----
+Prioritized recall + scoring
 
-## 🧰 Tech Stack
+Phase 3 – Learning Brain
 
-| Category              | Tools / Frameworks |
-|-----------------------|--------------------|
-| Programming           | Python (Async), PyPy, Rust (Ops) |
-| Models                | QLoRA-tuned GPT, LLaMA, Mistral |
-| Frameworks            | PyTorch Lightning, Deepspeed, JAX |
-| Memory & Storage      | FAISS, Redis, PostgreSQL, TimescaleDB |
-| Infrastructure        | Ray, Dask, Kubernetes, Triton Inference Server |
-| DevOps                | Docker, Podman, Helm, Cloud Build, GCP CI/CD |
+QLoRA + PPO training based on real feedback
 
----
+Phase 4 – Deployment & Benchmarks
 
-## 🧭 Roadmap Snapshot
+GPU-compatible Docker + Helm pipelines
 
-### Phase 1 – Tactical Intelligence
-- Ray/Dask execution, Retry loops, CLI toolchain
+Cloud-native benchmarks and self-evolution
 
-### Phase 2 – Deep Memory + Autonomy
-- Redis + FAISS hybrid memory with scoring & self-reflection
+Backlog
 
-### Phase 3 – Learning Brain
-- QLoRA + PPO reward pipeline based on JSON logs
+LangGraph support, Neo4j integration, advanced scheduling logic
 
-### Phase 4 – Deployment & Benchmarking
-- Docker/Helm + CI + Kubernetes auto-scaling
+🚀 Example Use Cases
+Self-updating agents that modify and re-run codebases
 
-### Add-ons (Backlog)
-- Event schedulers, Triton models, LangGraph + Neo4j integration
+Long-term memory agents for research or documentation
 
----
+LeetCode solver that evolves via benchmarks
 
-## 🚀 Example Use Cases
+Fully local LLM inference with low-cost tuning
 
-- 🔄 Self-updating agents that modify code, commit, and re-run pipelines  
-- 📚 Knowledge task agents with long-term memory  
-- 💾 Local LLM inference with customizable tuning  
-- 🧪 LeetCode solver with benchmark-driven evolution  
-- 📈 Task benchmarking for memory/toolchain improvements
+Performance tracking and self-optimization pipelines
 
----
+🔒 Deployment Modes
+Mode	Infra	Notes
+Dev (local)	Docker Compose	Fast offline testing
+GPU Cloud	GCP (T4)	QLoRA fine-tuning + inference
+K8s Prod	Helm + Kubernetes	Scale-to-zero, fault-tolerant ops
 
-## 🔒 Deployment Modes
+🧪 Benchmarking & Evolution
+Track real progress with benchmark.py:
 
-| Mode          | Infra           | Notes |
-|---------------|------------------|-------|
-| Dev (local)   | Docker Compose   | Fast testing |
-| GPU Cloud     | GCP + Triton     | QLoRA, PPO fine-tuning |
-| K8s Prod      | Helm + Kubernetes| Scale-to-zero / live agents |
+Memory recall accuracy
 
----
+Code generation correctness
 
-## 🧪 Benchmarking & Evolution
+Tool success rate
 
-Track agent performance with `benchmark.py`. Includes:
+Planning/reasoning scores
 
-- ✅ Memory recall tests  
-- ✅ Code generation accuracy  
-- ✅ Tool invocation success rate  
-- ✅ Planning/reasoning scores  
+Every PR must pass memory + execution tests — this isn’t static code; it's a learning agent.
 
-> Every PR must pass memory + execution tests — this is a learning agent, not static code.
+👨‍💻 Built By
+VertexAutoGPT was crafted from scratch — every pipeline, module, and reasoning loop. Inspired by modern agent frameworks, but reimagined for full control, modularity, and performance-first design.
 
----
+📜 License
+MIT — because your agent should be your own.
 
-## 👨‍💻 Built By
-
-**VertexAutoGPT** was built from scratch — every file, pipeline, and reasoning loop. Not cloned. Not forked. Inspired by modern agents, but designed for control, personalization, and modular evolution.
-
----
-
-## 📜 License
-
-MIT — because your brain should be yours.
-
----
-
-## 💬 Contact / Collab
-
-Open to OSS collabs, R&D partnerships, and infrastructure automation projects.  
+💬 Contact / Collab
+Open to OSS collabs, R&D partnerships, or GPU-scale infrastructure builds.
+Reach out: saurabhpareek228@gmail.com
