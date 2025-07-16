@@ -1,6 +1,6 @@
 
 ---
-
+ 
 ### CONTRIBUTING.md  
 ```md
 # 🤝 Contributing to AutoGPT
