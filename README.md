@@ -17,7 +17,7 @@ An autonomous agent designed for automated research. It uses a dynamic tool sele
 ## Technology Stack
 
 - **Agent Core**: Python, Asyncio, LangChain  
-- **Model Backend**: OpenAI API (GPT-3.5) or fine-tuned Llama 2 7B  
+- **Model Backend**: fine-tuned Llama 2 7B  
 - **Memory**: FAISS VectorDB  
 - **Tooling**: Google Search API, Arxiv API, Browse, Code Execution  
 - **Infrastructure**: GCP Preemptible VMs, FastAPI, Docker  
