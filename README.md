@@ -1,56 +1,40 @@
 # VertexAutoGPT
 
-An autonomous agent designed for automated research and workflow optimization. VertexAutoGPT combines cutting-edge AI and cloud infrastructure to create a powerful, cost-effective tool for researchers, developers, and data scientists.
+An autonomous agent designed for automated research. It uses a dynamic tool selection mechanism and a vector-based memory to ingest and summarize information efficiently, while optimizing for cost through cloud infrastructure choices.
 
----
+## Key Features
 
-### **Features**
+- **Automated Research**: Capable of ingesting and summarizing information from multiple sources.
 
-* **RLHF-Optimized Decision Loop:** A fine-tuned reward model ensures the agent's tool usage becomes more efficient and effective over time.
-* **FAISS-Powered Memory:** The use of a FAISS vector database allows for blazing-fast long-term memory retrieval, improving the agent's contextual awareness and performance.
-* **VertexAI Toolformer-style Tooling:** The agent dynamically selects the best tool for a task, including Google Search, code execution, and data summarization, directly from its prompt.
-* **Cost-Minimized Infrastructure:** By leveraging GCP Preemptible instances, VertexAutoGPT reduces training and inference costs by up to 40% compared to standard cloud setups.
+- **Dynamic Tool Selection**: Uses prompt engineering to allow the LLM to choose the right tool for a task (e.g., Google Search, Arxiv API, Browse).
 
----
+- **Vector-Based Memory**: Employs a FAISS vector database to retrieve relevant information, providing the agent with long-term context.
 
-### **Capabilities**
+- **Cost-Efficient Infrastructure**: Leverages GCP Preemptible VMs and Docker to significantly reduce operational costs.
 
-* **Automated Research:** Ingests and summarizes 50+ research papers per week.
-* **Dynamic Tool Use:** The agent's core loop intelligently selects and executes tools.
-* **Reinforcement Learning:** Optimizes its own behavior through a reward feedback system.
-* **High-Performance Memory:** Achieves 10K+ token recall with ~100ms latency.
+- **Feedback Loop**: A rule-based system provides basic feedback to the agent to improve tool-use over time.
 
----
+## Technology Stack
 
-### **Technology Stack**
+- **Agent Core**: Python, Asyncio, LangChain  
+- **Model Backend**: OpenAI API (GPT-3.5) or fine-tuned Llama 2 7B  
+- **Memory**: FAISS VectorDB  
+- **Tooling**: Google Search API, Arxiv API, Browse, Code Execution  
+- **Infrastructure**: GCP Preemptible VMs, FastAPI, Docker  
 
-| Component | Stack |
-| :--- | :--- |
-| **Agent Core** | Python, Asyncio, LangChain |
-| **Model Backend** | CodeLlama-7B, Mistral, VertexAI LLM APIs |
-| **Memory** | FAISS VectorDB |
-| **RLHF** | Custom Reward Model, PPO-style finetuning |
-| **Tooling** | Google Search API, Arxiv API, Browse, Code Execution |
-| **Infrastructure** | GCP Preemptible VMs, FastAPI, Docker |
+## What It Demonstrates
 
----
+- **Systems-Level Thinking**: The ability to integrate multiple technologies (LLMs, vector databases, APIs, cloud infrastructure) into a single, functional system.
 
-### **Use Cases**
+- **Advanced Concepts**: A practical understanding of vector embeddings, dynamic tool usage, and prompt engineering.
 
-* Automate literature reviews and stay current on research.
-* Fine-tune domain-specific agents for niche tasks.
-* Scale up research assistants for large-scale data analysis.
-* Experiment with RLHF in real-world, tool-using environments.
+- **Problem-Solving**: The deliberate choice to use cost-saving infrastructure and a feedback loop shows a focus on practical, real-world constraints.
 
----
-
-### **License**
+## License
 
 This project is licensed under the MIT License. Your agent should be yours to own and control.
 
----
-
-### **Contact / Collaboration**
+## Contact / Collaboration
 
 We're open to open-source collaborations and R&D partnerships.
 
