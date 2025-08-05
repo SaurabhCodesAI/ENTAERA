@@ -1,6 +1,6 @@
 # VertexAutoGPT
 
-🧠 **AutoGPT-style agent** with:
+**AutoGPT-style agent** with:
 - RLHF-optimized decision loop  
 - FAISS-powered memory  
 - VertexAI Toolformer-style tooling  
@@ -8,17 +8,17 @@
 
 ---
 
-## 🧠 Capabilities
+## Capabilities
 
-- 🔍 **Automated Research** — Ingests and summarizes 50+ papers per week  
-- 🛠️ **Toolformer Loop** — Dynamically selects tools (search, summarize, code, write)  
-- 🔄 **RLHF Loop** — Optimizes tool usage via reward feedback  
-- 🧠 **FAISS Memory** — 10x faster long-term memory retrieval  
-- ☁️ **VertexAI + GCP** — 40% cheaper training and inference
+- Automated Research — Ingests and summarizes 50+ papers per week  
+- Toolformer Loop — Dynamically selects tools (search, summarize, code, write)  
+- RLHF Loop — Optimizes tool usage via reward feedback  
+- FAISS Memory — 10x faster long-term memory retrieval  
+- VertexAI + GCP — 40% cheaper training and inference
 
 ---
 
-## ⚙️ Stack
+## Stack
 
 | Layer          | Tech                                                                 |
 |----------------|----------------------------------------------------------------------|
@@ -31,31 +31,30 @@
 
 ---
 
-## 📦 Results
+## Results
 
 | Metric               | Value                     |
 |----------------------|---------------------------|
-| Cost ↓               | 40% (vs standard GCP)     |
-| Token Recall ↑       | 10K+                      |
-| Research Rate ↑      | 50+ papers/week           |
-| Memory Latency ↓     | ~100ms (FAISS)            |
+| Cost Reduction       | 40% (vs standard GCP)     |
+| Token Recall         | 10K+                      |
+| Research Rate        | 50+ papers/week           |
+| Memory Latency       | ~100ms (FAISS)            |
 
 ---
 
-## 🚀 Use-Cases
+## Use Cases
 
-- 🔬 Automate lit reviews  
-- 🤖 Fine-tune domain-specific agents  
-- 📈 Research assistant at scale  
-- 🧪 Experiment with RLHF in real-world tools  
+- Automate literature reviews  
+- Fine-tune domain-specific agents  
+- Scale research assistants  
+- Experiment with RLHF in real-world tools  
 
 ---
 
-## 🧪 Example
+## Example
 
 ```python
 agent.query("Summarize latest papers on Mixtral’s MoE routing, pick 3 to implement.")
-
 
 ---
 
