@@ -1,65 +1,57 @@
 # VertexAutoGPT
 
-**AutoGPT-style agent** with:
-- RLHF-optimized decision loop  
-- FAISS-powered memory  
-- VertexAI Toolformer-style tooling  
-- Cost-minimized via GCP Preemptible instances
+An autonomous agent designed for automated research and workflow optimization. VertexAutoGPT combines cutting-edge AI and cloud infrastructure to create a powerful, cost-effective tool for researchers, developers, and data scientists.
 
 ---
 
-## Capabilities
+### **Features**
 
-- Automated Research — Ingests and summarizes 50+ papers per week  
-- Toolformer Loop — Dynamically selects tools (search, summarize, code, write)  
-- RLHF Loop — Optimizes tool usage via reward feedback  
-- FAISS Memory — 10x faster long-term memory retrieval  
-- VertexAI + GCP — 40% cheaper training and inference
-
----
-
-## Stack
-
-| Layer          | Tech                                                                 |
-|----------------|----------------------------------------------------------------------|
-| Agent Core     | Python + Asyncio + LangChain                                         |
-| Model Backend  | CodeLlama-7B, Mistral + VertexAI LLM APIs                            |
-| Memory         | FAISS VectorDB (10K+ token recall, 100ms latency)                    |
-| RLHF           | Custom Reward Model + PPO-style finetuning                           |
-| Tooling        | Google Search API, Arxiv API, Browsing, Code Execution               |
-| Infra          | GCP Preemptible VMs + FastAPI + Docker                               |
+* **RLHF-Optimized Decision Loop:** A fine-tuned reward model ensures the agent's tool usage becomes more efficient and effective over time.
+* **FAISS-Powered Memory:** The use of a FAISS vector database allows for blazing-fast long-term memory retrieval, improving the agent's contextual awareness and performance.
+* **VertexAI Toolformer-style Tooling:** The agent dynamically selects the best tool for a task, including Google Search, code execution, and data summarization, directly from its prompt.
+* **Cost-Minimized Infrastructure:** By leveraging GCP Preemptible instances, VertexAutoGPT reduces training and inference costs by up to 40% compared to standard cloud setups.
 
 ---
 
-## Results
+### **Capabilities**
 
-| Metric               | Value                     |
-|----------------------|---------------------------|
-| Cost Reduction       | 40% (vs standard GCP)     |
-| Token Recall         | 10K+                      |
-| Research Rate        | 50+ papers/week           |
-| Memory Latency       | ~100ms (FAISS)            |
+* **Automated Research:** Ingests and summarizes 50+ research papers per week.
+* **Dynamic Tool Use:** The agent's core loop intelligently selects and executes tools.
+* **Reinforcement Learning:** Optimizes its own behavior through a reward feedback system.
+* **High-Performance Memory:** Achieves 10K+ token recall with ~100ms latency.
 
 ---
 
-## Use Cases
+### **Technology Stack**
 
-- Automate literature reviews  
-- Fine-tune domain-specific agents  
-- Scale research assistants  
-- Experiment with RLHF in real-world tools  
-
----
-
-
-
-## 📜 License
-
-**MIT** — because your agent should be yours.
+| Component | Stack |
+| :--- | :--- |
+| **Agent Core** | Python, Asyncio, LangChain |
+| **Model Backend** | CodeLlama-7B, Mistral, VertexAI LLM APIs |
+| **Memory** | FAISS VectorDB |
+| **RLHF** | Custom Reward Model, PPO-style finetuning |
+| **Tooling** | Google Search API, Arxiv API, Browse, Code Execution |
+| **Infrastructure** | GCP Preemptible VMs, FastAPI, Docker |
 
 ---
 
-## 💬 Contact / Collab
+### **Use Cases**
 
-Open to OSS collaborations, R&D partnerships.  
+* Automate literature reviews and stay current on research.
+* Fine-tune domain-specific agents for niche tasks.
+* Scale up research assistants for large-scale data analysis.
+* Experiment with RLHF in real-world, tool-using environments.
+
+---
+
+### **License**
+
+This project is licensed under the MIT License. Your agent should be yours to own and control.
+
+---
+
+### **Contact / Collaboration**
+
+We're open to open-source collaborations and R&D partnerships.
+
 📧 saurabhpareek228@gmail.com
