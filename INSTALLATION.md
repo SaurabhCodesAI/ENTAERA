@@ -1,4 +1,4 @@
-# 🚀 Installation Guide – VertexAutoGPT
+# Installation Guide – VertexAutoGPT
 
 Follow this guide to set up and run **VertexAutoGPT**, an autonomous research agent built for intelligent tool use, long-term memory, and cost-aware infrastructure.
 
@@ -16,7 +16,7 @@ Before starting, make sure you have the following installed:
 
 ---
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 ### 1️⃣ Clone the Repository
 
@@ -67,7 +67,7 @@ python main.py
 Once started, the agent will:
 - Use vector memory for context (via FAISS)
 - Dynamically choose tools (search, code, papers)
-- Automate multi-step research workflows
+- Automate multi step research workflows
 
 ---
 
@@ -91,11 +91,11 @@ docker build -t vertexautogpt .
 docker run -p 8080:8080 vertexautogpt
 ```
 
-> ✅ You can mount your model directory and pass `.env` variables during Docker run if needed.
+> You can mount your model directory and pass `.env` variables during Docker run if needed.
 
 ---
 
-## 🧩 Troubleshooting
+## Troubleshooting
 
 - **FAISS not installing?** → Try using Python 3.9 or reinstall with `conda`.
 - **Model loading error?** → Check your `MODEL_PATH` or confirm the model format (e.g., HF Transformers or GGUF).
@@ -115,7 +115,7 @@ See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for details.
 
 ---
 
-## 🪪 License
+## License
 
 Licensed under the [MIT License](./LICENSE). You own what you build.
 
