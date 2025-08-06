@@ -16,7 +16,7 @@ You can contribute in several ways:
 
 ---
 
-## 🛠 Project Setup (For Contributors)
+## Project Setup (For Contributors)
 
 1. **Fork the Repository**
 
