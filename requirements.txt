@@ -1,0 +1,42 @@
+# VertexAutoGPT Dependencies
+# Core AI/ML Libraries
+langchain>=0.0.350
+openai>=1.0.0
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2
+
+# Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Database & Caching
+sqlalchemy>=2.0.0
+redis>=5.0.0
+celery>=5.3.0
+
+# Web Scraping & Processing
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+selenium>=4.15.0
+PyPDF2>=3.0.1
+python-docx>=0.8.11
+
+# Async & Utilities
+asyncio
+aiohttp>=3.9.0
+python-dotenv>=1.0.0
+pydantic>=2.4.0
+
+# Cloud & Deployment
+google-cloud-compute>=1.14.0
+docker>=6.1.0
+
+# Development & Testing
+pytest>=7.4.0
+black>=23.9.0
+flake8>=6.1.0
+pre-commit>=3.5.0
+
+# Optional GPU support
+# torch>=2.1.0
+# transformers>=4.35.0
