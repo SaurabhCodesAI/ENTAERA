@@ -1,5 +1,11 @@
 # VertexAutoGPT
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/SaurabhCodesAI/VertexAutoGPT.svg)](https://github.com/SaurabhCodesAI/VertexAutoGPT/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/SaurabhCodesAI/VertexAutoGPT.svg)](https://github.com/SaurabhCodesAI/VertexAutoGPT/network)
+[![GitHub issues](https://img.shields.io/github/issues/SaurabhCodesAI/VertexAutoGPT.svg)](https://github.com/SaurabhCodesAI/VertexAutoGPT/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/SaurabhCodesAI/VertexAutoGPT.svg)](https://github.com/SaurabhCodesAI/VertexAutoGPT/commits/main)
+
 An autonomous agent designed for automated research. It uses a dynamic tool selection mechanism and a vector-based memory to ingest and summarize information efficiently, while optimizing for cost through cloud infrastructure choices.
 
 ## Key Features
