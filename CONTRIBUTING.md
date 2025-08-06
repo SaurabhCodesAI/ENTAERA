@@ -1,6 +1,6 @@
 # 🤝 Contributing to VertexAutoGPT
 
-Thanks for your interest in contributing to **VertexAutoGPT**! This project is built to explore LLM-based autonomous agents, and we welcome ideas, bug fixes, docs, and features — especially from newcomers 🚀
+Thanks for your interest in contributing to **VertexAutoGPT**! This project is built to explore LLM-based autonomous agents, and we welcome ideas, bug fixes, docs, and features especially from newcomers 
 
 ---
 
@@ -113,4 +113,4 @@ By contributing, you agree that your code will be released under the [MIT Licens
 Your time and contributions mean a lot. Whether you're improving one line or adding new modules, you're helping build the future of autonomous research agents.
 
 Happy coding!  
-— *Saurabh & VertexAutoGPT Team*
+*Saurabh & VertexAutoGPT Team*
