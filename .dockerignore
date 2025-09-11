@@ -1,0 +1,15 @@
+# Ignore the git repository folder
+.git
+.gitignore
+
+# Ignore IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore the Dockerfile itself
+Dockerfile

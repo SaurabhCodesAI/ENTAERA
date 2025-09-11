@@ -16,7 +16,7 @@ You can contribute in several ways:
 
 ---
 
-## Project Setup (For Contributors)
+## 🛠 Project Setup (For Contributors)
 
 1. **Fork the Repository**
 
@@ -108,7 +108,7 @@ By contributing, you agree that your code will be released under the [MIT Licens
 
 ---
 
-## Acknowledgement
+## 🙌 Acknowledgement
 
 Your time and contributions mean a lot. Whether you're improving one line or adding new modules, you're helping build the future of autonomous research agents.
 
