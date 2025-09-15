@@ -1,8 +1,19 @@
 import sys
+import json
 
 def main():
-    print("🔥 VertexAutoGPT CLI is alive! 🔥")
-    print(f"Python executable: {sys.executable}")
+    # Ensure Unicode characters like 🔥 print correctly
+    sys.stdout.reconfigure(encoding='utf-8')
+
+    response = {
+        "status": "success",
+        "message": "🔥 VertexAutoGPT CLI is alive! 🔥",
+        "python_executable": sys.executable,
+        "version_info": sys.version
+    }
+
+    # ✅ Ensure proper JSON output
+    print(json.dumps(response, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
