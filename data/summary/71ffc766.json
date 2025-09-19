@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "SECOND TEST - Consistency check for n8n integration",
+  "source": "consistency-check",
+  "metadata": {
+    "version": 1,
+    "hash": "71ffc766"
+  },
+  "timestamp": "2025-09-19T12:17:03.854Z",
+  "file": {
+    "filename": "71ffc766.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\71ffc766.json"
+}
