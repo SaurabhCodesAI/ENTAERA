@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Test data for commit frequency validation",
+  "source": "validation_test",
+  "metadata": {
+    "version": 1,
+    "hash": "bdb42762"
+  },
+  "timestamp": "2025-09-19T09:36:11.660Z",
+  "file": {
+    "filename": "bdb42762.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\bdb42762.json"
+}
