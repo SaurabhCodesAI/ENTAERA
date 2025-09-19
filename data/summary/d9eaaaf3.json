@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Pre-import test",
+  "source": "pre-test",
+  "metadata": {
+    "version": 1,
+    "hash": "d9eaaaf3"
+  },
+  "timestamp": "2025-09-19T12:21:44.616Z",
+  "file": {
+    "filename": "d9eaaaf3.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\d9eaaaf3.json"
+}
