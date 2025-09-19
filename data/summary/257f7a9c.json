@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Testing fixed stdin processor",
+  "source": "stdin-fixed",
+  "metadata": {
+    "version": 1,
+    "hash": "257f7a9c"
+  },
+  "timestamp": "2025-09-19T12:14:58.773Z",
+  "file": {
+    "filename": "257f7a9c.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\257f7a9c.json"
+}
