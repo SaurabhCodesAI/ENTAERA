@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "SUCCESS! Testing the stdin approach in n8n - this should finally work without any errors!",
+  "source": "stdin-n8n-test",
+  "metadata": {
+    "version": 1,
+    "hash": "79b3f6ae"
+  },
+  "timestamp": "2025-09-19T12:15:07.532Z",
+  "file": {
+    "filename": "79b3f6ae.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\79b3f6ae.json"
+}
