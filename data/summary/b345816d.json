@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Simple test",
+  "source": "simple",
+  "metadata": {
+    "version": 1,
+    "hash": "b345816d"
+  },
+  "timestamp": "2025-09-19T12:07:02.451Z",
+  "file": {
+    "filename": "b345816d.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\b345816d.json"
+}
