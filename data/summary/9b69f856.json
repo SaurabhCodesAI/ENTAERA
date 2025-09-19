@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Testing the updated CMD command in n8n Process Data node",
+  "source": "cmd-updated-test",
+  "metadata": {
+    "version": 1,
+    "hash": "9b69f856"
+  },
+  "timestamp": "2025-09-19T11:56:33.376Z",
+  "file": {
+    "filename": "9b69f856.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\9b69f856.json"
+}
