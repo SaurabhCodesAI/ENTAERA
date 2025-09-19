@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Final smoke test - complete pipeline validation",
+  "source": "smoke_test",
+  "metadata": {
+    "version": 1,
+    "hash": "be8404f4"
+  },
+  "timestamp": "2025-09-19T09:36:11.887Z",
+  "file": {
+    "filename": "be8404f4.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\be8404f4.json"
+}
