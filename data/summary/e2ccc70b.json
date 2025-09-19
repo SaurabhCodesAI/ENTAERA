@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "PowerShell test",
+  "source": "ps",
+  "metadata": {
+    "version": 1,
+    "hash": "e2ccc70b"
+  },
+  "timestamp": "2025-09-19T11:39:25.121Z",
+  "file": {
+    "filename": "e2ccc70b.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\e2ccc70b.json"
+}
