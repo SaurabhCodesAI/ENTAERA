@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "n8n integration test - file-based processor working",
+  "source": "n8n-file-processor",
+  "metadata": {
+    "version": 1,
+    "hash": "04293e31"
+  },
+  "timestamp": "2025-09-19T11:31:13.343Z",
+  "file": {
+    "filename": "04293e31.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\04293e31.json"
+}
