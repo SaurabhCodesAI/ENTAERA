@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Direct test of processor",
+  "source": "direct-test",
+  "metadata": {
+    "version": 1,
+    "hash": "e5413db2"
+  },
+  "timestamp": "2025-09-19T11:54:35.209Z",
+  "file": {
+    "filename": "e5413db2.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\e5413db2.json"
+}
