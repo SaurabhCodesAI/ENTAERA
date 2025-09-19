@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Testing output format",
+  "source": "format-test",
+  "metadata": {
+    "version": 1,
+    "hash": "a1a66eee"
+  },
+  "timestamp": "2025-09-19T11:56:45.510Z",
+  "file": {
+    "filename": "a1a66eee.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\a1a66eee.json"
+}
