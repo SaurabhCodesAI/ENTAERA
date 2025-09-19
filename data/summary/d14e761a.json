@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "PowerShell test",
+  "source": "ps-test",
+  "metadata": {
+    "version": 1,
+    "hash": "d14e761a"
+  },
+  "timestamp": "2025-09-19T12:11:07.963Z",
+  "file": {
+    "filename": "d14e761a.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\d14e761a.json"
+}
