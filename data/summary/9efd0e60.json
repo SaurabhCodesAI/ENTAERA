@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "This is a test message for data processing validation",
+  "source": "manual_test",
+  "metadata": {
+    "version": 1,
+    "hash": "9efd0e60"
+  },
+  "timestamp": "2025-09-19T10:42:52.507Z",
+  "file": {
+    "filename": "9efd0e60.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\9efd0e60.json"
+}
