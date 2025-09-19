@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Local debug test",
+  "source": "local-debug",
+  "metadata": {
+    "version": 1,
+    "hash": "705c1f1d"
+  },
+  "timestamp": "2025-09-19T12:05:16.225Z",
+  "file": {
+    "filename": "705c1f1d.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\705c1f1d.json"
+}
