@@ -251,7 +251,68 @@ follow_up = await ai.chat("Can you give me a practical example?")
 print(f"Context maintained: {follow_up.used_context}")
 ```
 
-## 📚 **Learning Resources**
+## � **Project Structure**
+
+ENTAERA follows a clean, organized structure designed for learning and professional development:
+
+```
+ENTAERA/
+├── 📂 src/entaera/              # Core framework source code
+│   ├── core/                    # Core functionality modules
+│   │   ├── config.py           # Configuration management
+│   │   ├── logger.py           # Logging and monitoring
+│   │   ├── conversation.py     # Context and conversation handling
+│   │   └── semantic_search.py  # Search and retrieval capabilities
+│   └── utils/                   # Utility modules and helpers
+│       ├── api_router.py       # Smart routing algorithms
+│       ├── rate_limiter.py     # Rate limiting and throttling
+│       └── text_processor.py   # Text processing utilities
+│
+├── 📂 docs/                     # Comprehensive documentation
+│   ├── ENTAERA_QUICKSTART_GUIDE.md
+│   ├── ENTAERA_API_REFERENCE.md
+│   ├── ENTAERA_ARCHITECTURE_GUIDE.md
+│   └── ENTAERA_DEPLOYMENT_GUIDE.md
+│
+├── 📂 examples/                 # Learning examples and tutorials
+│   └── basic_usage/            # Getting started examples
+│
+├── 📂 demos/                    # Interactive demonstrations
+│   ├── *_chat.py              # Chat application demos
+│   ├── test_*.py              # API testing and validation
+│   └── demo_*.py              # Feature demonstrations
+│
+├── 📂 scripts/                  # Development and deployment scripts
+│   ├── *.ps1                   # PowerShell automation scripts
+│   └── *.sh                    # Shell deployment scripts
+│
+├── 📂 tools/                    # Development tools and utilities
+│   ├── local_model_loader.py   # AI model management
+│   └── azure_monitor.py        # Performance monitoring
+│
+├── 📂 config/                   # Configuration files and backups
+│   ├── .env.backup             # Environment backups
+│   └── .env.development        # Development configurations
+│
+├── 📂 tests/                    # Testing framework
+├── 📂 .github/                  # GitHub workflows and templates
+├── 📄 README.md                # This learning journey overview
+├── 📄 requirements.txt         # Python dependencies
+└── 📄 pyproject.toml           # Project configuration
+```
+
+### **Directory Purposes**
+
+- **`src/`**: Production-ready framework code with clean architecture
+- **`docs/`**: Comprehensive learning documentation and guides
+- **`examples/`**: Step-by-step tutorials and usage examples
+- **`demos/`**: Interactive scripts to explore framework capabilities
+- **`scripts/`**: Automation tools for development and deployment
+- **`tools/`**: Utility scripts for monitoring and maintenance
+- **`config/`**: Environment configurations and backups
+- **`tests/`**: Quality assurance and testing framework
+
+## �📚 **Learning Resources**
 
 ### **Documentation**
 - 📖 [**Comprehensive Guide**](./docs/ENTAERA_COMPREHENSIVE_DOCUMENTATION.md) - Complete framework overview
@@ -368,7 +429,7 @@ This project represents my journey in learning modern AI development practices. 
 
 📧 **Email**: saurabhpareek228@gmail.com  
 🐙 **GitHub**: [@SaurabhCodesAI](https://github.com/SaurabhCodesAI)  
-💼 **LinkedIn**: [Connect with me](https://linkedin.com/in/saurabhpareek)
+💼 **LinkedIn**: [Connect with me](https://www.linkedin.com/in/saurabh-pareekk)
 
 ---
 
