@@ -1,0 +1,41 @@
+# This file sets repository configuration settings
+# See: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests
+
+# Branch protection rules
+branches:
+  # Main branch protection
+  - name: main
+    protection:
+      # Require pull request reviews before merging
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+      
+      # Require status checks to pass before merging
+      required_status_checks:
+        strict: true
+        contexts:
+          - test
+      
+      # Require conversation resolution before merging
+      required_conversation_resolution: true
+      
+      # Include administrators in restrictions
+      enforce_admins: true
+      
+      # Restrict who can push to the protected branch
+      restrictions: null  # No restrictions on who can push
+
+  # Development branch protection (less strict)
+  - name: development
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+      required_status_checks:
+        strict: false
+        contexts:
+          - test
+      required_conversation_resolution: true
+      enforce_admins: false
+      restrictions: null

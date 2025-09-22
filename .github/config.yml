@@ -1,0 +1,10 @@
+# GitHub configuration for the VertexAutoGPT repository
+
+# Configure markdown rendering
+markdown:
+  # Don't render README.md as a table of contents
+  # This ensures your custom formatting is preserved
+  toc:
+    enabled: false
+  # Stricter markdown rendering for better consistency
+  strict: true

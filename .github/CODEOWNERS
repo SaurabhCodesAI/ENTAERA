@@ -1,0 +1,19 @@
+# This is a CODEOWNERS file that defines code ownership for the repository
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+* @yourusername
+
+# Specific ownership for core components
+/src/ @yourusername
+/tests/ @yourusername
+
+# Documentation ownership
+/docs/ @yourusername
+*.md @yourusername
+
+# Workflow and CI/CD ownership
+/.github/ @yourusername
+
+# Replace @yourusername with actual GitHub usernames of code owners
+# You can specify multiple owners using spaces: @user1 @user2
