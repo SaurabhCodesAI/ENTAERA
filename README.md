@@ -20,7 +20,7 @@
 ## 📖 The Real Story
 
 > *"I thought I'd quickly connect a few APIs and build something cool. What I actually discovered was a 6-month journey of learning, debugging, and growing as a developer."*  
-> **— Saurabh Pareek**
+> **Saurabh Pareek**
 
 <table>
 <tr>
@@ -407,6 +407,8 @@ Most importantly, it demonstrates the **learning mindset** and **problem-solving
 **Thanks for taking the time to understand my journey! 🙏**
 
 *Built with ❤️ and lots of ☕ by Saurabh*
+
+</div>
 
 </div>
 
