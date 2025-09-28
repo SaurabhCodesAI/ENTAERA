@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "test from n8n",
+  "source": "n8n-webhook",
+  "metadata": {
+    "version": 1,
+    "hash": "cfb2394a"
+  },
+  "timestamp": "2025-09-19T13:15:21.408379Z",
+  "file": {
+    "filename": "cfb2394a.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\cfb2394a.json"
+}

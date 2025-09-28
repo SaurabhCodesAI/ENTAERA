@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "instanceId": "vertex-diagnostic"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "diagnostic",
+        "responseMode": "responseNode"
+      },
+      "id": "diag-webhook",
+      "name": "Diagnostic Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"received\": true, \"data\": $json, \"timestamp\": new Date().toISOString() } }}"
+      },
+      "id": "diag-response",
+      "name": "Diagnostic Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [400, 300]
+    }
+  ],
+  "connections": {
+    "Diagnostic Webhook": {
+      "main": [
+        [
+          {
+            "node": "Diagnostic Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

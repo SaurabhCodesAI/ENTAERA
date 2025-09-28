@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "instanceId": "vertex-template-test"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "template-test",
+        "responseMode": "responseNode"
+      },
+      "id": "template-webhook",
+      "name": "Template Test Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "command": "cd /d \"C:\\Users\\saurabh\\VertexAutoGPT\" && echo {{ JSON.stringify($json.body) }} | .venv\\Scripts\\python.exe n8n_simple_processor.py"
+      },
+      "id": "template-command",
+      "name": "Template Test Command",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"template_test\": true, \"command_output\": $node[\"Template Test Command\"].json.stdout, \"command_error\": $node[\"Template Test Command\"].json.stderr, \"exit_code\": $node[\"Template Test Command\"].json.exitCode } }}"
+      },
+      "id": "template-response",
+      "name": "Template Test Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [600, 300]
+    }
+  ],
+  "connections": {
+    "Template Test Webhook": {
+      "main": [
+        [
+          {
+            "node": "Template Test Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Template Test Command": {
+      "main": [
+        [
+          {
+            "node": "Template Test Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

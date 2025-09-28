@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "instanceId": "vertex-googledrive-solution"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode"
+      },
+      "id": "gdrive-webhook",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process the incoming webhook data\nconst webhookData = $input.all()[0].json.body;\n\n// Generate simple hash for filename (without crypto module)\nfunction simpleHash(str) {\n  let hash = 0;\n  for (let i = 0; i < str.length; i++) {\n    const char = str.charCodeAt(i);\n    hash = ((hash << 5) - hash) + char;\n    hash = hash & hash; // Convert to 32bit integer\n  }\n  return Math.abs(hash).toString(16).substring(0, 8);\n}\n\nconst contentHash = simpleHash(JSON.stringify(webhookData.content || 'default') + Date.now());\n\n// Create the processed data structure\nconst processedData = {\n  type: webhookData.type || 'summary',\n  content: webhookData.content || 'No content provided',\n  source: webhookData.source || 'n8n-googledrive',\n  metadata: {\n    version: 1,\n    hash: contentHash,\n    processed_by: 'n8n-googledrive-workflow',\n    processed_at: new Date().toISOString()\n  },\n  timestamp: new Date().toISOString(),\n  file: {\n    filename: `${contentHash}.json`,\n    mimetype: 'application/json'\n  }\n};\n\nreturn {\n  processedData: processedData,\n  filename: `${contentHash}.json`,\n  hash: contentHash,\n  jsonContent: JSON.stringify(processedData, null, 2)\n};"
+      },
+      "id": "process-data",
+      "name": "Process Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $node['Process Data'].json.filename }}",
+          "mode": "name"
+        },
+        "options": {
+          "parentId": {
+            "__rl": true,
+            "value": "1uOvDtX1fgluSra0l8tZ0FbqvhH5-3qC2",
+            "mode": "id"
+          }
+        },
+        "binaryData": false,
+        "fileContent": "={{ $node['Process Data'].json.jsonContent }}"
+      },
+      "id": "upload-to-drive",
+      "name": "Upload to Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [600, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "saurabhpareek228@gmail.com",
+        "toEmail": "saurabhpareek228@gmail.com",
+        "subject": "✅ VertexAutoGPT Processing Complete - {{ $node['Process Data'].json.filename }}",
+        "emailFormat": "html",
+        "message": "<h2>🎉 VertexAutoGPT Data Processed Successfully!</h2>\n<p><strong>File:</strong> {{ $node['Process Data'].json.filename }}</p>\n<p><strong>Hash:</strong> {{ $node['Process Data'].json.hash }}</p>\n<p><strong>Content:</strong> {{ $node['Process Data'].json.processedData.content }}</p>\n<p><strong>Source:</strong> {{ $node['Process Data'].json.processedData.source }}</p>\n<p><strong>Google Drive:</strong> <a href=\"{{ $node['Upload to Google Drive'].json.webViewLink }}\">View File</a></p>\n<p><strong>Processed At:</strong> {{ $node['Process Data'].json.processedData.timestamp }}</p>"
+      },
+      "id": "send-email",
+      "name": "Send Email Notification",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [800, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  \"success\": true,\n  \"message\": \"Data processed and uploaded to Google Drive successfully\",\n  \"filename\": $node['Process Data'].json.filename,\n  \"hash\": $node['Process Data'].json.hash,\n  \"drive_link\": $node['Upload to Google Drive'].json.webViewLink,\n  \"drive_id\": $node['Upload to Google Drive'].json.id,\n  \"processed_at\": $node['Process Data'].json.processedData.timestamp\n} }}"
+      },
+      "id": "success-response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1000, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Data": {
+      "main": [
+        [
+          {
+            "node": "Upload to Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to Google Drive": {
+      "main": [
+        [
+          {
+            "node": "Send Email Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email Notification": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

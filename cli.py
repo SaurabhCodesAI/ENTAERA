@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
-import sys
 import json
 
 def main():
-    # Create a dictionary with your data
     output_data = {
         "status": "success",
-        "message": "🔥 VertexAutoGPT CLI is alive! 🔥",
-        "python_executable": sys.executable
+        "topic": "AI impact on renewable energy",
+        "source": "https://example.com/research-paper.pdf",
+        "summary": "AI can optimize energy grids by 15%..."
     }
-    
-    # Print the dictionary as a JSON string
+
+    # Print only JSON (important!)
     print(json.dumps(output_data))
 
 if __name__ == "__main__":

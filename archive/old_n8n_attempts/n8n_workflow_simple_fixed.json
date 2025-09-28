@@ -1,0 +1,73 @@
+{
+  "name": "VertexAutoGPT Simple Fixed",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 460],
+      "webhookId": "vertex-webhook"
+    },
+    {
+      "parameters": {
+        "command": "powershell -Command \"cd C:\\Users\\saurabh\\VertexAutoGPT; '{{ JSON.stringify($json.body) }}' | Out-File -FilePath 'n8n_temp_data.json' -Encoding UTF8; & .venv\\Scripts\\python.exe n8n_processor_file.py\""
+      },
+      "id": "process-data",
+      "name": "Process Data",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [420, 460]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.parse($node[\"Process Data\"].json.stdout) }}"
+      },
+      "id": "success-response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [640, 460]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Data": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": ["simple", "working", "fixed"],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-19T12:40:00.000Z",
+  "versionId": "4"
+}

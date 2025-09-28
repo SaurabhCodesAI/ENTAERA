@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Testing exact n8n format",
+  "source": "exact-test",
+  "metadata": {
+    "version": 1,
+    "hash": "74051f4f"
+  },
+  "timestamp": "2025-09-19T12:59:23.002523Z",
+  "file": {
+    "filename": "74051f4f.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\74051f4f.json"
+}

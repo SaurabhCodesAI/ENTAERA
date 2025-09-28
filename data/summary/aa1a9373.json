@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Testing stdin PowerShell",
+  "source": "stdin-ps-test",
+  "metadata": {
+    "version": 1,
+    "hash": "aa1a9373"
+  },
+  "timestamp": "2025-09-19T12:56:53.173790Z",
+  "file": {
+    "filename": "aa1a9373.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\aa1a9373.json"
+}

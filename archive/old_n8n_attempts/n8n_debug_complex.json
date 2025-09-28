@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "instanceId": "vertex-debug-complex"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "debug-complex",
+        "responseMode": "responseNode"
+      },
+      "id": "debug-webhook-complex",
+      "name": "Debug Complex Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "command": "cd /d \"C:\\Users\\saurabh\\VertexAutoGPT\" && dir"
+      },
+      "id": "debug-command-complex",
+      "name": "Debug Complex Command",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"command_output\": $node[\"Debug Complex Command\"].json.stdout, \"command_error\": $node[\"Debug Complex Command\"].json.stderr } }}"
+      },
+      "id": "debug-response-complex",
+      "name": "Debug Complex Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [600, 300]
+    }
+  ],
+  "connections": {
+    "Debug Complex Webhook": {
+      "main": [
+        [
+          {
+            "node": "Debug Complex Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Debug Complex Command": {
+      "main": [
+        [
+          {
+            "node": "Debug Complex Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

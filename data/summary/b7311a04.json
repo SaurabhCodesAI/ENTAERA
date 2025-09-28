@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "FINAL TEST - This should work in n8n",
+  "source": "final-n8n-test",
+  "metadata": {
+    "version": 1,
+    "hash": "b7311a04"
+  },
+  "timestamp": "2025-09-19T12:57:10.642805Z",
+  "file": {
+    "filename": "b7311a04.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\b7311a04.json"
+}

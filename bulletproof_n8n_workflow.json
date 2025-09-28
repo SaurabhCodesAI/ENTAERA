@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "instanceId": "bulletproof-vertex-workflow"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "http://localhost:5678"
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ✅ BULLETPROOF INPUT VALIDATION & PROCESSING\n// Uses only pure JavaScript - no restricted modules\n\ntry {\n  // Get webhook data with safety checks\n  const inputData = $input.all();\n  if (!inputData || inputData.length === 0) {\n    throw new Error('No input data received');\n  }\n  \n  const webhookData = inputData[0].json.body || inputData[0].json;\n  \n  // ✅ Schema validation with defaults\n  const validatedData = {\n    content: String(webhookData.content || 'No content provided'),\n    type: String(webhookData.type || 'summary'),\n    source: String(webhookData.source || 'n8n-workflow')\n  };\n  \n  // ✅ Pure JavaScript hash function (no crypto module)\n  function createSafeHash(str) {\n    let hash = 0;\n    const timestamp = Date.now().toString();\n    const fullString = str + timestamp;\n    \n    for (let i = 0; i < fullString.length; i++) {\n      const char = fullString.charCodeAt(i);\n      hash = ((hash << 5) - hash) + char;\n      hash = hash & hash; // Convert to 32bit integer\n    }\n    return Math.abs(hash).toString(16).substring(0, 8);\n  }\n  \n  // Generate unique hash\n  const contentHash = createSafeHash(JSON.stringify(validatedData));\n  const timestamp = new Date().toISOString();\n  \n  // ✅ Enforced schema structure\n  const processedData = {\n    type: validatedData.type,\n    content: validatedData.content,\n    source: validatedData.source,\n    metadata: {\n      hash: contentHash,\n      version: 1,\n      processed_by: 'n8n-bulletproof-workflow',\n      processed_at: timestamp\n    },\n    timestamp: timestamp\n  };\n  \n  // ✅ Prepare for binary upload\n  const jsonString = JSON.stringify(processedData, null, 2);\n  const fileName = `${validatedData.type}_${contentHash}.json`;\n  \n  // ✅ Create binary data for Google Drive\n  const binaryData = Buffer.from(jsonString, 'utf8').toString('base64');\n  \n  return {\n    json: {\n      processedData: processedData,\n      fileName: fileName,\n      hash: contentHash,\n      jsonContent: jsonString,\n      validation: {\n        success: true,\n        timestamp: timestamp,\n        inputValid: true\n      }\n    },\n    binary: {\n      data: {\n        data: binaryData,\n        fileName: fileName,\n        mimeType: 'application/json'\n      }\n    }\n  };\n  \n} catch (error) {\n  // ✅ Comprehensive error handling\n  return {\n    json: {\n      error: true,\n      message: error.message,\n      timestamp: new Date().toISOString(),\n      validation: {\n        success: false,\n        inputValid: false\n      }\n    }\n  };\n}"
+      },
+      "id": "validation-processing",
+      "name": "Validation & Processing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.validation && $json.validation.success }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "error-check",
+      "name": "Error Check",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [600, 300]
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $node['Validation & Processing'].json.fileName }}",
+          "mode": "name"
+        },
+        "options": {
+          "parentId": {
+            "__rl": true,
+            "value": "YOUR_GOOGLE_DRIVE_FOLDER_ID",
+            "mode": "id"
+          }
+        },
+        "binaryData": true,
+        "binaryPropertyName": "data"
+      },
+      "id": "google-drive-upload",
+      "name": "Google Drive Upload",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [800, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "your-email@example.com",
+        "toEmail": "your-email@example.com",
+        "subject": "✅ VertexAutoGPT Processing Complete - {{ $node['Validation & Processing'].json.fileName }}",
+        "emailFormat": "html",
+        "message": "<h2>🎉 VertexAutoGPT Data Processed Successfully!</h2>\\n<p><strong>File:</strong> {{ $node['Validation & Processing'].json.fileName }}</p>\\n<p><strong>Hash:</strong> {{ $node['Validation & Processing'].json.hash }}</p>\\n<p><strong>Type:</strong> {{ $node['Validation & Processing'].json.processedData.type }}</p>\\n<p><strong>Content Preview:</strong> {{ $node['Validation & Processing'].json.processedData.content.substring(0, 100) }}...</p>\\n<p><strong>Source:</strong> {{ $node['Validation & Processing'].json.processedData.source }}</p>\\n<p><strong>Google Drive:</strong> <a href=\\\"{{ $node['Google Drive Upload'].json.webViewLink }}\\\">View File</a></p>\\n<p><strong>Direct Download:</strong> <a href=\\\"{{ $node['Google Drive Upload'].json.webContentLink }}\\\">Download JSON</a></p>\\n<p><strong>Processed At:</strong> {{ $node['Validation & Processing'].json.processedData.timestamp }}</p>\\n<hr>\\n<p><em>Automated by Bulletproof n8n Workflow</em></p>"
+      },
+      "id": "email-notification",
+      "name": "Email Notification",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1000, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"message\": \"Data processed and uploaded successfully\", \"file\": { \"name\": $json.fileName, \"hash\": $json.hash, \"drive_id\": $node['Google Drive Upload'].json.id, \"drive_link\": $node['Google Drive Upload'].json.webViewLink, \"download_link\": $node['Google Drive Upload'].json.webContentLink }, \"data\": { \"type\": $json.processedData.type, \"source\": $json.processedData.source, \"content_preview\": $json.processedData.content.substring(0, 100) + \"...\" }, \"processing\": { \"processed_at\": $json.processedData.timestamp, \"processed_by\": \"n8n-bulletproof-workflow\", \"validation_success\": $json.validation.success }, \"notifications\": { \"email_sent\": true, \"email_to\": \"your-email@example.com\" } } }}"
+      },
+      "id": "success-response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1200, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": false, \"error\": true, \"message\": $json.message || \"Processing failed\", \"timestamp\": $json.timestamp, \"validation\": $json.validation || {\"success\": false}, \"troubleshooting\": { \"check_input_format\": \"Ensure JSON contains content, type, and source fields\", \"supported_types\": [\"summary\", \"analysis\", \"report\"], \"example_input\": { \"content\": \"Your data here\", \"type\": \"summary\", \"source\": \"your-source\" } } } }}"
+      },
+      "id": "error-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [800, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validation & Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation & Processing": {
+      "main": [
+        [
+          {
+            "node": "Error Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Check": {
+      "main": [
+        [
+          {
+            "node": "Google Drive Upload",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Upload": {
+      "main": [
+        [
+          {
+            "node": "Email Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Notification": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "instanceId": "vertex-working-solution"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode"
+      },
+      "id": "working-webhook",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 460]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare the JSON data for command line\nconst jsonData = JSON.stringify($input.all()[0].json.body);\n// Escape quotes for command line\nconst escapedJson = jsonData.replace(/\"/g, '\\\\\"');\nreturn { \n  original: $input.all()[0].json.body,\n  jsonString: jsonData,\n  escapedJson: escapedJson\n};"
+      },
+      "id": "prepare-json",
+      "name": "Prepare JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 460]
+    },
+    {
+      "parameters": {
+        "command": "cd /d \"C:\\Users\\saurabh\\VertexAutoGPT\" && echo \"{{ $node[\"Prepare JSON\"].json.jsonString }}\" | .venv\\Scripts\\python.exe n8n_simple_processor.py"
+      },
+      "id": "process-data",
+      "name": "Process Data",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [640, 460]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [],
+          "number": [],
+          "string": [
+            {
+              "value1": "={{ JSON.parse($node[\"Process Data\"].json.stdout).status }}",
+              "operation": "equal",
+              "value2": "success"
+            }
+          ]
+        }
+      },
+      "id": "check-success",
+      "name": "Check Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [860, 460]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"message\": \"Data processed successfully\", \"filename\": JSON.parse($node[\"Process Data\"].json.stdout).filename, \"hash\": JSON.parse($node[\"Process Data\"].json.stdout).hash } }}"
+      },
+      "id": "success-response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1080, 360]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": false, \"error\": \"Processing failed\", \"details\": $node[\"Process Data\"].json.stderr || \"Unknown error\" } }}"
+      },
+      "id": "error-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1080, 560]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Prepare JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare JSON": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Data": {
+      "main": [
+        [
+          {
+            "node": "Check Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Success": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

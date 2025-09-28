@@ -1,0 +1,1 @@
+# Empty __init__.py to make tests/e2e directory a Python package

@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Manual test of exact n8n command",
+  "source": "exact-n8n-test",
+  "metadata": {
+    "version": 1,
+    "hash": "c3710a0c"
+  },
+  "timestamp": "2025-09-19T13:05:39.250134Z",
+  "file": {
+    "filename": "c3710a0c.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\c3710a0c.json"
+}

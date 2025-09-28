@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "This is a test from the simple processor",
+  "source": "test",
+  "metadata": {
+    "version": 1,
+    "hash": "242a16a2"
+  },
+  "timestamp": "2025-09-19T12:42:40.966033Z",
+  "file": {
+    "filename": "242a16a2.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\242a16a2.json"
+}

@@ -1,0 +1,41 @@
+param(
+    [string]$Type,
+    [string]$Hash,  
+    [string]$JsonContent,
+    [string]$Timestamp
+)
+
+# Debug log
+$debugPath = "C:\Users\saurabh\VertexAutoGPT\debug.log"
+Add-Content -Path $debugPath -Value "=== New Execution ==="
+Add-Content -Path $debugPath -Value "Time: $(Get-Date)"
+Add-Content -Path $debugPath -Value "Type: $Type"
+Add-Content -Path $debugPath -Value "Hash: $Hash"
+Add-Content -Path $debugPath -Value "Timestamp: $Timestamp"
+Add-Content -Path $debugPath -Value "JsonContent Raw: $JsonContent"
+Add-Content -Path $debugPath -Value "-----------------------------"
+
+# Change to project directory
+Set-Location "C:\Users\saurabh\VertexAutoGPT"
+
+# Ensure directory exists
+New-Item -ItemType Directory -Force -Path "data\$Type" | Out-Null
+
+# If JsonContent is valid, write to file
+if ($Hash -and $JsonContent) {
+    $filePath = "data\$Type\$Hash.json"
+    $JsonContent | Out-File -FilePath $filePath -Encoding UTF8
+
+    # Stage and commit
+    git add "data/$Type/"
+    $staged = git diff --cached --name-only
+    if ($staged) {
+        git commit -m "[type:$Type] Added new $Type - $Timestamp"
+        Write-Output "SUCCESS: File created and committed for type $Type"
+        Write-Output "Committed files: $staged"
+    } else {
+        Write-Output "INFO: No changes to commit for type $Type"
+    }
+} else {
+    Write-Output "⚠️ Skipped: Missing Hash or JsonContent"
+}

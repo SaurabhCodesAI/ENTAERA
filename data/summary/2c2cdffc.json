@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "Direct processor test",
+  "source": "direct-test",
+  "metadata": {
+    "version": 1,
+    "hash": "2c2cdffc"
+  },
+  "timestamp": "2025-09-19T12:53:55.446757Z",
+  "file": {
+    "filename": "2c2cdffc.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\2c2cdffc.json"
+}

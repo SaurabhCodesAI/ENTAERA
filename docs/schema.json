@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VertexAutoGPT Data Schema",
+  "description": "Standard schema for VertexAutoGPT data processing outputs",
+  "type": "object",
+  "required": ["type", "content", "source", "metadata", "timestamp"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["summary", "raw", "embedding", "analysis"],
+      "description": "The type of data content"
+    },
+    "content": {
+      "type": "string",
+      "description": "The main content or summary text"
+    },
+    "source": {
+      "type": "string",
+      "description": "Source of the data (WhatsApp, Google, manual_test, etc.)"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["hash", "version"],
+      "properties": {
+        "hash": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{8}$",
+          "description": "8-character SHA256 hash of the file content"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Schema version number"
+        }
+      },
+      "additionalProperties": true
+    },
+    "timestamp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
+      "description": "ISO8601 timestamp with milliseconds and Z suffix"
+    },
+    "file": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "Original filename"
+        },
+        "mimetype": {
+          "type": "string",
+          "default": "application/json"
+        }
+      }
+    },
+    "fileName": {
+      "type": "string",
+      "description": "Full file path"
+    }
+  },
+  "additionalProperties": false
+}

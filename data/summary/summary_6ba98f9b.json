@@ -1,0 +1,10 @@
+{
+  "type": "summary",
+  "content": "This is a test summary payload",
+  "source": "manual_test",
+  "metadata": {
+    "hash": "86ddb8e9",
+    "version": 1
+  },
+  "timestamp": "2025-09-18T14:05:18.304Z"
+}

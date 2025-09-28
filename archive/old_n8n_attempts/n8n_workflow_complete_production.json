@@ -1,0 +1,236 @@
+{
+  "name": "VertexAutoGPT Complete Production",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 460],
+      "webhookId": "vertex-webhook"
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && echo {{ JSON.stringify($json.body) }} | .venv\\Scripts\\python.exe n8n_stdin_processor.py"
+      },
+      "id": "process-data",
+      "name": "Process Data",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [420, 460]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "success-check",
+              "leftValue": "={{ JSON.parse($node[\"Process Data\"].json.stdout).status }}",
+              "rightValue": "success",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-success",
+      "name": "Check Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [640, 460]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && echo Workspace validation check && dir data\\summary | findstr /C:\".json\" | measure-object | foreach { \"Found $($_.Count) summary files\" } && echo Validation: PASSED"
+      },
+      "id": "validate-workspace",
+      "name": "Validate Workspace",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [860, 360]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && git status --porcelain && echo Git status check completed"
+      },
+      "id": "git-status",
+      "name": "Git Status",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1080, 360]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && git add . && git commit -m \"[type:{{ JSON.parse($node[\"Process Data\"].json.stdout).hash }}] Automated n8n commit - {{ new Date().toISOString() }}\" && git push && echo Upload completed successfully"
+      },
+      "id": "upload-commit",
+      "name": "Upload & Commit",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1300, 360]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": {
+          "status": "success",
+          "message": "Complete workflow executed successfully",
+          "data": "={{ JSON.parse($node[\"Process Data\"].json.stdout) }}",
+          "validation": "={{ $node[\"Validate Workspace\"].json.stdout }}",
+          "git_status": "={{ $node[\"Git Status\"].json.stdout }}",
+          "upload_result": "={{ $node[\"Upload & Commit\"].json.stdout }}",
+          "timestamp": "={{ new Date().toISOString() }}",
+          "workflow": "complete-production"
+        }
+      },
+      "id": "success-response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1520, 360]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": {
+          "status": "error",
+          "message": "Processing failed in workflow",
+          "error_details": "={{ $node[\"Process Data\"].json.stderr || 'Processing error occurred' }}",
+          "node_output": "={{ $node[\"Process Data\"].json.stdout || 'No output available' }}",
+          "timestamp": "={{ new Date().toISOString() }}",
+          "workflow": "complete-production"
+        }
+      },
+      "id": "error-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [860, 560]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": {
+          "status": "validation_error",
+          "message": "Workspace validation failed",
+          "error_details": "={{ $node[\"Validate Workspace\"].json.stderr || 'Validation error' }}",
+          "timestamp": "={{ new Date().toISOString() }}",
+          "workflow": "complete-production"
+        }
+      },
+      "id": "validation-error",
+      "name": "Validation Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1080, 560]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Data": {
+      "main": [
+        [
+          {
+            "node": "Check Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Success": {
+      "main": [
+        [
+          {
+            "node": "Validate Workspace",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Workspace": {
+      "main": [
+        [
+          {
+            "node": "Git Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ],
+      "error": [
+        [
+          {
+            "node": "Validation Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Status": {
+      "main": [
+        [
+          {
+            "node": "Upload & Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload & Commit": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": ["production", "vertexautogpt", "complete"],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-19T12:25:00.000Z",
+  "versionId": "2"
+}

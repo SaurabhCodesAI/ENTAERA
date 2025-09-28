@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "instanceId": "vertex-debug"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "debug-webhook",
+        "responseMode": "responseNode"
+      },
+      "id": "debug-webhook",
+      "name": "Debug Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "command": "echo Testing basic command execution"
+      },
+      "id": "debug-command",
+      "name": "Debug Command",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"command_output\": $node[\"Debug Command\"].json.stdout, \"command_error\": $node[\"Debug Command\"].json.stderr } }}"
+      },
+      "id": "debug-response",
+      "name": "Debug Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [600, 300]
+    }
+  ],
+  "connections": {
+    "Debug Webhook": {
+      "main": [
+        [
+          {
+            "node": "Debug Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Debug Command": {
+      "main": [
+        [
+          {
+            "node": "Debug Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

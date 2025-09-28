@@ -1,0 +1,15 @@
+{
+  "type": "summary",
+  "content": "HTTP processor test",
+  "source": "http-test",
+  "metadata": {
+    "version": 1,
+    "hash": "d1743ab4"
+  },
+  "timestamp": "2025-09-19T13:27:20.779310Z",
+  "file": {
+    "filename": "d1743ab4.json",
+    "mimetype": "application/json"
+  },
+  "fileName": "C:\\Users\\saurabh\\VertexAutoGPT\\data\\summary\\d1743ab4.json"
+}

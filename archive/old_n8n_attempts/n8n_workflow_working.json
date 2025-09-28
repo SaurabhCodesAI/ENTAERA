@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "instanceId": "vertex-auto-gpt-fixed"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode"
+      },
+      "id": "webhook-1",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 460]
+    },
+    {
+      "parameters": {
+        "command": "cd /d \"C:\\Users\\saurabh\\VertexAutoGPT\" && echo {{ JSON.stringify($json.body) }} | .venv\\Scripts\\python.exe n8n_simple_processor.py"
+      },
+      "id": "process-1",
+      "name": "Process Data",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [420, 460]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [],
+          "number": [],
+          "string": [
+            {
+              "value1": "={{ JSON.parse($node[\"Process Data\"].json.stdout).status }}",
+              "operation": "equal",
+              "value2": "success"
+            }
+          ]
+        }
+      },
+      "id": "check-1",
+      "name": "Check Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [640, 460]
+    },
+    {
+      "parameters": {
+        "command": "cd /d \"C:\\Users\\saurabh\\VertexAutoGPT\" && dir data\\summary\\*.json /b | find /c \".json\" && echo Validation completed"
+      },
+      "id": "validate-1",
+      "name": "Validate Workspace",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [860, 360]
+    },
+    {
+      "parameters": {
+        "command": "cd /d \"C:\\Users\\saurabh\\VertexAutoGPT\" && git status --porcelain"
+      },
+      "id": "git-status-1",
+      "name": "Git Status",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1080, 360]
+    },
+    {
+      "parameters": {
+        "command": "cd /d \"C:\\Users\\saurabh\\VertexAutoGPT\" && git add data/summary/{{ JSON.parse($node[\"Process Data\"].json.stdout).filename }} && git commit -m \"[type:summary] Automated commit for {{ JSON.parse($node[\"Process Data\"].json.stdout).hash }}\""
+      },
+      "id": "git-commit-1",
+      "name": "Upload & Commit",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1300, 360]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"message\": \"Data processed successfully\", \"filename\": JSON.parse($node[\"Process Data\"].json.stdout).filename, \"hash\": JSON.parse($node[\"Process Data\"].json.stdout).hash } }}"
+      },
+      "id": "success-1",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1520, 360]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": false, \"error\": \"Processing failed\", \"details\": $node[\"Process Data\"].json.stderr || \"Unknown error\" } }}"
+      },
+      "id": "error-1",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [860, 560]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Data": {
+      "main": [
+        [
+          {
+            "node": "Check Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Success": {
+      "main": [
+        [
+          {
+            "node": "Validate Workspace",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Workspace": {
+      "main": [
+        [
+          {
+            "node": "Git Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Status": {
+      "main": [
+        [
+          {
+            "node": "Upload & Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload & Commit": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

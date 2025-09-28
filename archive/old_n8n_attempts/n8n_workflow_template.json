@@ -1,0 +1,180 @@
+{
+  "name": "VertexAutoGPT - Python Integration",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "vertex-autogpt-webhook"
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && .venv\\Scripts\\python.exe -c \"from n8n_integration import N8nIntegration; import json; import sys; data=json.loads(sys.argv[1]); n8n=N8nIntegration(); result=n8n.process_webhook_data(data); print(json.dumps(result))\" \"{{ JSON.stringify($json) }}\""
+      },
+      "id": "process-data",
+      "name": "Process Data",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ JSON.parse($json.stdout).status }}",
+              "operation": "equal",
+              "value2": "success"
+            }
+          ]
+        }
+      },
+      "id": "check-success",
+      "name": "Check Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && .venv\\Scripts\\python.exe -c \"from n8n_integration import N8nIntegration; import json; n8n=N8nIntegration(); result=n8n.git_status(); print(json.dumps(result))\""
+      },
+      "id": "git-status",
+      "name": "Git Status",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && .venv\\Scripts\\python.exe -c \"from n8n_integration import N8nIntegration; import json; n8n=N8nIntegration(); result=n8n.upload_simulation('{{ JSON.parse($node[\\\"Process Data\\\"].json.stdout).file_path }}'); print(json.dumps(result))\""
+      },
+      "id": "upload-file",
+      "name": "Upload File",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.parse($node[\"Upload File\"].json.stdout) }}"
+      },
+      "id": "success-response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.parse($node[\"Process Data\"].json.stdout) }}"
+      },
+      "id": "error-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 400]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && .venv\\Scripts\\python.exe -c \"from n8n_integration import N8nIntegration; import json; n8n=N8nIntegration(); result=n8n.validate_workspace(); print(json.dumps(result))\""
+      },
+      "id": "validate-workspace",
+      "name": "Validate Workspace",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Data": {
+      "main": [
+        [
+          {
+            "node": "Check Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Success": {
+      "main": [
+        [
+          {
+            "node": "Git Status",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Status": {
+      "main": [
+        [
+          {
+            "node": "Upload File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload File": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-19T00:00:00.000Z",
+  "updatedAt": "2025-09-19T00:00:00.000Z",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-09-19T00:00:00.000Z",
+      "updatedAt": "2025-09-19T00:00:00.000Z",
+      "id": "vertex-autogpt",
+      "name": "VertexAutoGPT"
+    }
+  ],
+  "triggerCount": 1,
+  "versionId": "vertex-autogpt-v1"
+}

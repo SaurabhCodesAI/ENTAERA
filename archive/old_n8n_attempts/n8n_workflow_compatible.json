@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "instanceId": "vertex-auto-gpt"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vertex-webhook",
+        "responseMode": "responseNode"
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abc",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 460]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && echo {{ JSON.stringify($json.body) }} | .venv\\Scripts\\python.exe n8n_stdin_processor.py"
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abd",
+      "name": "Process Data",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [420, 460]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [],
+          "number": [],
+          "string": [
+            {
+              "value1": "={{ JSON.parse($node[\"Process Data\"].json.stdout).status }}",
+              "operation": "equal",
+              "value2": "success"
+            }
+          ]
+        }
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abe",
+      "name": "Check Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [640, 460]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && dir data\\summary\\*.json /b | find /c \".json\" && echo Validation completed"
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abf",
+      "name": "Validate Workspace",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [860, 360]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && git status --short && echo Git check completed"
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abg",
+      "name": "Git Status",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1080, 360]
+    },
+    {
+      "parameters": {
+        "command": "cd C:\\Users\\saurabh\\VertexAutoGPT && git add . && git commit -m \"[automated] n8n commit\" && echo Upload completed"
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abh",
+      "name": "Upload & Commit",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1300, 360]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.parse($node[\"Process Data\"].json.stdout) }}"
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abi",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1520, 360]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\"status\": \"error\", \"message\": \"Processing failed\"}"
+      },
+      "id": "f7b9b1e0-1234-4567-8901-123456789abj",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [860, 560]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Data": {
+      "main": [
+        [
+          {
+            "node": "Check Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Success": {
+      "main": [
+        [
+          {
+            "node": "Validate Workspace",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Workspace": {
+      "main": [
+        [
+          {
+            "node": "Git Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Status": {
+      "main": [
+        [
+          {
+            "node": "Upload & Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload & Commit": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
