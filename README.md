@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&pause=1000&color=64FFDA&center=true&vCenter=true&width=1000&height=100&lines=Saurabh+Pareek+%7C+AI+Engineer;AI+Systems+Developer;Practical+AI+Applications" alt="Dynamic Header" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&pause=1000&color=64FFDA&center=true&vCenter=true&width=1000&height=80&lines=Saurabh+Pareek+%7C+AI+Engineer;Practical+AI+Applications" alt="Dynamic Header" />
 </div>
 
 <div align="center" style="margin: 20px 0;">
