@@ -31,7 +31,7 @@ I specialize in the end-to-end development of AI systems, from initial API integ
         <img src="https://user-images.githubusercontent.com/74038190/212748842-9fcbad5b-6173-4175-8a61-521f3dbb7514.gif" width="120">
       </div>
       <ul>
-        <li><b>Autonomous AI Frameworks</b> that can reason, research, and execute multi-step tasks</li>
+        <li><b>AI Frameworks</b> that can reason, research, and execute multi-step tasks</li>
         <li><b>Vector Memory Systems</b> for long-term, context-aware information retention</li>
         <li><b>Dynamic Tool Selection Frameworks</b> for efficient, intelligent resource routing</li>
         <li><b>Cost-Efficient AI Infrastructure</b> for scalable, production-ready deployment</li>
