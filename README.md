@@ -1,68 +1,83 @@
-# 🚀 ENTAERA Framework
-
-_My AI Integration Learning Journey_
+🚀 ENTAERA Framework
+My AI Integration Learning Journey
 
 Six months of real learning, problem-solving, and authentic growth. This is the story of building something that actually works—a multi-AI integration system that started as a curiosity and became a solid foundation for understanding modern AI development.
 
-> "I thought I'd quickly connect a few APIs and build something cool. What I actually discovered was a 6-month journey of learning, debugging, and growing as a developer."
->
-> _- Saurabh Pareek_
+"I thought I'd quickly connect a few APIs and build something cool. What I actually discovered was a 6-month journey of learning, debugging, and growing as a developer."
 
----
+- Saurabh Pareek
 
-## 📖 The Development Timeline
+📖 The Development Timeline
+🔥 Months 1-2: The Struggle
+What I Tried: Connect to my first AI API (Azure OpenAI).
 
-### 🔥 Months 1-2: The Struggle
-- **What I Tried:** Connect to my first AI API (Azure OpenAI).
-- **What Happened:** It took three weeks just to get a basic, reliable connection.
-- **Challenges Faced:**
-  - Learning API authentication from scratch.
-  - Correctly managing environment variables and secrets.
-  - Basic error handling (my code crashed a lot initially).
-- **Skills Gained:** API authentication, environment variable management, basic debugging, and reading technical documentation.
+What Happened: It took three weeks just to get a basic, reliable connection.
 
-### ⚡ Months 3-4: Building Momentum
-- **What I Tried:** Add more AI services (Google Gemini, Perplexity).
-- **What Happened:** Each new service taught me something different about APIs, from rate limits to varied auth methods.
-- **Challenges Faced:**
-  - Different authentication methods for each service.
-  - Rate limiting issues (I got blocked a few times).
-  - Handling different JSON response formats.
-- **Skills Developed:** API integration patterns, configuration management, better error handling, and logging.
+Challenges Faced:
 
-### 🚀 Months 5-6: Making It Smarter
-- **What I Tried:** Build a system to choose the right AI for different tasks.
-- **What Happened:** I created the first version of the routing logic and significantly improved the overall code structure.
-- **Skills That Emerged:** System design thinking, modular programming, testing strategies, and documentation.
+Learning API authentication from scratch.
 
----
+Correctly managing environment variables and secrets.
 
-## 🎯 What Actually Works Right Now
-_Honest Assessment - October 2025:_
+Basic error handling (my code crashed a lot initially).
 
-#### ✅ Four AI Services Connected:
-* **Azure OpenAI (GPT-3.5 Turbo):** Works reliably, good for general tasks.
-* **Google Gemini:** Fast responses, good for creative tasks.
-* **Perplexity:** Great for research questions.
-* **Local Ollama:** Works for private/offline processing.
+Skills Gained: API authentication, environment variable management, basic debugging, and reading technical documentation.
 
-#### ✅ Smart Routing System:
-* Analyzes query type and complexity.
-* Selects the appropriate AI service.
-* Tracks costs and performance.
-* Handles errors gracefully.
+⚡ Months 3-4: Building Momentum
+What I Tried: Add more AI services (Google Gemini, Perplexity).
 
-#### ✅ Solid Foundation:
-* Professional logging system.
-* Secure credential management.
-* Comprehensive error handling.
-* Clean, organized code structure.
+What Happened: Each new service taught me something different about APIs, from rate limits to varied auth methods.
 
----
+Challenges Faced:
 
-## 🛠️ Try It Yourself
+Different authentication methods for each service.
 
-```bash
+Rate limiting issues (I got blocked a few times).
+
+Handling different JSON response formats.
+
+Skills Developed: API integration patterns, configuration management, better error handling, and logging.
+
+🚀 Months 5-6: Making It Smarter
+What I Tried: Build a system to choose the right AI for different tasks.
+
+What Happened: I created the first version of the routing logic and significantly improved the overall code structure.
+
+Skills That Emerged: System design thinking, modular programming, testing strategies, and documentation.
+
+🎯 What Actually Works Right Now
+Honest Assessment - October 2025:
+
+✅ Four AI Services Connected:
+Azure OpenAI (GPT-3.5 Turbo): Works reliably, good for general tasks.
+
+Google Gemini: Fast responses, good for creative tasks.
+
+Perplexity: Great for research questions.
+
+Local Ollama: Works for private/offline processing.
+
+✅ Smart Routing System:
+Analyzes query type and complexity.
+
+Selects the appropriate AI service.
+
+Tracks costs and performance.
+
+Handles errors gracefully.
+
+✅ Solid Foundation:
+Professional logging system.
+
+Secure credential management.
+
+Comprehensive error handling.
+
+Clean, organized code structure.
+
+🛠️ Try It Yourself
+Bash
+
 # Quick test of all connected AI services
 python demos/test_entaera_apis.py
 
