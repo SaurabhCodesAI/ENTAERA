@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&pause=1000&color=64FFDA&center=true&vCenter=true&width=1000&height=100&lines=Saurabh+Pareek+%7C+AI+Engineer;Autonomous+Systems+Developer;Production-Ready+AI+Systems" alt="Dynamic Header" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&pause=1000&color=64FFDA&center=true&vCenter=true&width=1000&height=100&lines=Saurabh+Pareek+%7C+AI+Engineer;AI+Systems+Developer;Practical+AI+Applications" alt="Dynamic Header" />
 </div>
 
 <div align="center" style="margin: 20px 0;">
@@ -15,10 +15,10 @@
   <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500">
 </div>
 
-I am an **AI Engineer** focused on building autonomous systems for complex problem-solving. My flagship project, **ENTAERA**, is an autonomous hybrid research framework that dynamically selects tools, maintains long-term memory, and adapts its strategy to optimize for both performance and cost-efficiency.
+I am an **AI Engineer** focused on building AI systems for complex problem-solving. My flagship project, **ENTAERA**, is a hybrid research framework that dynamically selects tools, maintains long-term memory, and adapts its strategy to optimize for both performance and cost-efficiency.
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=64FFDA&center=true&vCenter=true&width=1000&height=70&lines=Autonomous+System+Frameworks+%7C+Vector+Memory;Intelligent+Routing+%7C+Multi-API+Integration;Research+to+Production+%7C+Deployable+AI+Solutions;End-to-End+Agentic+Workflows+%7C+Cost-Aware+Design;ENTAERA+%7C+Autonomous+Hybrid+Research+Framework" alt="AI Skills Showcase" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=64FFDA&center=true&vCenter=true&width=1000&height=70&lines=AI+System+Frameworks+%7C+Vector+Memory;Intelligent+Routing+%7C+Multi-API+Integration;LangChain+%7C+FastAPI+%7C+FAISS;End-to-End+Workflows+%7C+Cost-Aware+Design;ENTAERA+%7C+Hybrid+Research+Framework" alt="AI Skills Showcase" />
 </div>
 
 I specialize in the end-to-end development of AI systems, from initial API integration and debugging to building robust, multi-provider frameworks that solve real-world challenges.
@@ -34,7 +34,7 @@ I specialize in the end-to-end development of AI systems, from initial API integ
         <li><b>AI Frameworks</b> that can reason, research, and execute multi-step tasks</li>
         <li><b>Vector Memory Systems</b> for long-term, context-aware information retention</li>
         <li><b>Dynamic Tool Selection Frameworks</b> for efficient, intelligent resource routing</li>
-        <li><b>Cost-Efficient AI Infrastructure</b> for scalable, production-ready deployment</li>
+        <li><b>Cost-Efficient AI Infrastructure</b> for scalable deployment</li>
       </ul>
     </td>
     <td width="40%">
@@ -60,7 +60,7 @@ I specialize in the end-to-end development of AI systems, from initial API integ
 
 ### [ENTAERA](https://github.com/SaurabhCodesAI/VertexAutoGPT)
 
-**Autonomous Hybrid Research Framework**
+**Hybrid Research Framework**
 
 A framework designed to ingest and synthesize information from multiple sources using a dynamic tool selection mechanism and vector-based memory, integrating both cloud APIs and local open-source models.
 
@@ -128,9 +128,9 @@ Transforms screenshots, images, and notes into presentations using AI-driven con
 
 ### [Core Dev Workflow](https://github.com/SaurabhCodesAI/core-dev-workflow)
 
-**Autonomous Agent Framework**
+**Agentic Workflow Framework**
 
-An autonomous agent framework capable of self-directed reasoning, document processing, and information summarization.
+An agentic framework capable of self-directed reasoning, document processing, and information summarization.
 
 <details>
 <summary><b>🔍 View Project Details</b></summary>
@@ -251,6 +251,6 @@ Contributed to backend systems, focusing on API development, debugging, and perf
 - LLM Applications & AI Agents  
 - AI Infrastructure & MLOps
 
-**Ideal Collaboration:** Building AI systems where performance, memory constraints, and deployment challenges are primary considerations.
+**Ideal Collaboration:** Projects requiring thoughtful system design and resource management.
 
 ---
