@@ -6,7 +6,7 @@
 
 ## Why I Built This
 
-I wanted to understand how AI agents actually work under the hood—not just call a single API. This project began as a small "connect to Ollama" script and turned into a 6-month learning journey involving async orchestration, memory, routing, and safe error handling. I used ChatGPT/Claude to learn faster, but every piece of logic is something I debugged, wrote, and understand. This is a learning project that works.
+I wanted to understand how AI agents actually work under the hood not just call a single API. This project began as a small "connect to Ollama" script and turned into a 6-month learning journey involving async orchestration, memory, routing, and safe error handling. I used ChatGPT/Claude to learn faster, but every piece of logic is something I debugged, wrote, and understand. This is a learning project that works.
 
 ---
 
