@@ -1,6 +1,8 @@
 # ENTAERA
 
-**An experimental multi provider AI agent system built to learn async patterns, API integration, routing, and conversation memory.**
+**An experimental multi-provider AI agent system built to learn async patterns, API integration, routing, and conversation memory.**
+
+> 💡 **Seeking Microgrant:** $400 to upgrade memory from TF-IDF to semantic embeddings. [See funding details →](./ROADMAP.md)
 
 ---
 
@@ -84,17 +86,20 @@ I wanted to understand how AI agents actually work under the hood not just call 
 
 ## Roadmap
 
-**Next 3 Months**
-- Add sentence transformers embeddings (replace TF-IDF)
-- Build FastAPI HTTP endpoint
-- Add pytest unit tests
-- Replace pickle with SQLite
-- Improve logging and error messages
+**Current Focus:** Semantic memory upgrade (funded by microgrant)
 
-**Future (If Time Allows)**
+**Next 8-10 Weeks**
+- Replace TF-IDF with sentence-transformers
+- Add FAISS vector storage
+- Build comprehensive test suite
+- Deploy live demo for community testing
+
+See [ROADMAP.md](./ROADMAP.md) for detailed timeline and deliverables.
+
+**Future Possibilities** (post-funding)
+- REST API endpoint
 - Multi-user support
 - Streaming responses
-- Plugin system for custom agents
 
 ---
 
@@ -131,28 +136,27 @@ python agent.py
 
 ---
 
-## Microgrant Use
+## Support This Project
 
-**Requested: $400** (within normal $300–$500 range)
+**Microgrant Request: $400**
 
-**Breakdown**
-- $150 — Cloud deployment for FastAPI demo (Vercel/Railway)
-- $100 — API quota/testing for Gemini + Perplexity
-- $75 — Documentation, examples, and demo recording
-- $75 — Developer time for embeddings + tests
+Funding will upgrade ENTAERA's memory from keyword-based (TF-IDF) to semantic embeddings, making context retrieval significantly better.
 
-**Enables**
-- A public demo with embedding memory
-- Better error handling
-- Clear contributor documentation
-- Reliable unit test coverage
+**Budget:**
+- $120 — API testing credits (Gemini Pro + Perplexity)
+- $80 — Cloud deployment for live demo (3 months)
+- $200 — Development time (open source rate)
 
-**Not Promising**
-- Enterprise level features
-- Production grade guarantees
-- Unrealistic timelines
+**Timeline:** 8-10 weeks  
+**Deliverable:** Working semantic search with live demo anyone can test
 
-**Goal:** Make ENTAERA easier to understand, run, extend, and contribute to.
+**Why fund this?**
+- Real working code, not tutorials
+- Helps developers learn multi-provider AI orchestration
+- Open source (MIT), benefits entire community
+- Honest about scope and limitations
+
+**[📋 Full Roadmap & Details →](./ROADMAP.md)**
 
 ---
 
