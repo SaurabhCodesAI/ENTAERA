@@ -352,7 +352,8 @@ class RealPerplexityProvider(AIProviderInterface):
         try:
             headers = {
                 "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "X-Pplx-Integration": "entaera"
             }
             
             messages = []

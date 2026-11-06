@@ -343,7 +343,8 @@ async def query_perplexity(query: str, context: str="") -> str:
                 "https://api.perplexity.ai/chat/completions",
                 headers={
                     "Authorization": f"Bearer {PERPLEXITY_API_KEY}",
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "X-Pplx-Integration": "entaera"
                 },
                 json={
                     "model": "sonar",

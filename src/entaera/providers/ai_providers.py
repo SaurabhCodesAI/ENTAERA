@@ -384,7 +384,8 @@ class PerplexityProvider(AIProviderInterface):
             
             client = openai.AsyncOpenAI(
                 api_key=self.api_key,
-                base_url="https://api.perplexity.ai"
+                base_url="https://api.perplexity.ai",
+                default_headers={"X-Pplx-Integration": "entaera"}
             )
             
             messages = []
